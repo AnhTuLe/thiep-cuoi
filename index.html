@@ -213,22 +213,21 @@ main > section > *,main > img,main > footer > *{animation:rv-in linear both;anim
 <section style="min-height: 580px; box-sizing: border-box; padding: 72px 24px; display: flex; flex-direction: column; justify-content: center; gap: 28px; border-top: 1px solid #1F221C">
 <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.24em"><span style="color: var(--rose)">05</span> — MỪNG CƯỚI</div>
 <p style="margin: 0; max-width: 320px; font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 28px; line-height: 1.3">Sự hiện diện của bạn là món quà quý nhất.</p>
-<p style="margin: 0 0 0 40px; max-width: 300px; line-height: 1.75">Nếu muốn gửi quà mừng, bạn có thể quét mã bên dưới.</p>
-<div style="display: flex; align-items: flex-end; gap: 20px">
-<div style="width: 150px; height: 150px; flex-shrink: 0; box-sizing: border-box; background: #FFFFFF; border: 1px solid #1F221C; display: flex; align-items: center; justify-content: center; text-align: center; padding: 12px; font-size: 13px; color: #5B6052"><span data-qr>[Mã QR mừng cưới]</span></div>
-<div style="display: flex; flex-direction: column; gap: 12px">
-<div style="display: flex; flex-direction: column; gap: 2px">
-<div style="font-size: 12px; letter-spacing: 0.2em; color: #5B6052">NGÂN HÀNG</div>
-<div style="font-weight: 500"><span data-cfg="bankName">[Tên ngân hàng]</span></div>
+<p style="margin: 0 0 0 40px; max-width: 300px; line-height: 1.75">Nếu muốn gửi quà mừng, bạn có thể quét mã của chú rể hoặc cô dâu bên dưới.</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 16px; width: 100%; max-width: 440px">
+<div style="min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="font-size: 12px; letter-spacing: 0.2em; color: #5B6052">CHÚ RỂ</div>
+<div style="font-family: 'Playfair Display', Georgia, serif; font-size: 19px; line-height: 1.25">Tú Anh</div>
+<div style="width: 100%; aspect-ratio: 1; overflow: hidden; box-sizing: border-box; background: #FFFFFF; border: 1px solid #1F221C; display: flex; align-items: center; justify-content: center; text-align: center; padding: 8px; font-size: 13px; color: #5B6052"><span data-qr="groomQr">[Mã QR]</span></div>
+<div style="font-size: 14px; line-height: 1.6; overflow-wrap: anywhere"><span data-cfg="groomBank">[Ngân hàng]</span><br><span data-cfg="groomAccount" style="font-weight: 600">[Số tài khoản]</span><br><span data-cfg="groomHolder">[Chủ tài khoản]</span></div>
+<button type="button" data-copy="groomAccount" data-needs="groomAccount" style="align-self: flex-start; min-height: 44px; padding: 0; border: 0; border-radius: 0; background: none; color: #1F221C; text-decoration: underline; text-underline-offset: 6px; font: inherit; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; cursor: pointer">SAO CHÉP SỐ TK</button>
 </div>
-<div style="display: flex; flex-direction: column; gap: 2px">
-<div style="font-size: 12px; letter-spacing: 0.2em; color: #5B6052">SỐ TÀI KHOẢN</div>
-<div style="font-weight: 500"><span data-cfg="bankAccount">[Số tài khoản]</span></div>
-</div>
-<div style="display: flex; flex-direction: column; gap: 2px">
-<div style="font-size: 12px; letter-spacing: 0.2em; color: #5B6052">CHỦ TÀI KHOẢN</div>
-<div style="font-weight: 500"><span data-cfg="bankHolder">[Tên chủ tài khoản]</span></div>
-</div>
+<div style="min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="font-size: 12px; letter-spacing: 0.2em; color: #5B6052">CÔ DÂU</div>
+<div style="font-family: 'Playfair Display', Georgia, serif; font-size: 19px; line-height: 1.25">Kim Châu</div>
+<div style="width: 100%; aspect-ratio: 1; overflow: hidden; box-sizing: border-box; background: #FFFFFF; border: 1px solid #1F221C; display: flex; align-items: center; justify-content: center; text-align: center; padding: 8px; font-size: 13px; color: #5B6052"><span data-qr="brideQr">[Mã QR]</span></div>
+<div style="font-size: 14px; line-height: 1.6; overflow-wrap: anywhere"><span data-cfg="brideBank">[Ngân hàng]</span><br><span data-cfg="brideAccount" style="font-weight: 600">[Số tài khoản]</span><br><span data-cfg="brideHolder">[Chủ tài khoản]</span></div>
+<button type="button" data-copy="brideAccount" data-needs="brideAccount" style="align-self: flex-start; min-height: 44px; padding: 0; border: 0; border-radius: 0; background: none; color: #1F221C; text-decoration: underline; text-underline-offset: 6px; font: inherit; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; cursor: pointer">SAO CHÉP SỐ TK</button>
 </div>
 </div>
 </section>
@@ -257,7 +256,7 @@ main > section > *,main > img,main > footer > *{animation:rv-in linear both;anim
 </div>
 </div>
 </div>
-<script src="config.js?v=3"></script>
-<script src="app.js?v=3"></script>
+<script src="config.js?v=4"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>

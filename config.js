@@ -10,9 +10,15 @@ window.WEDDING = {
   // Hạn khách phản hồi, ví dụ "25.11.2026". Để trống thì câu nhắc hạn tự ẩn.
   rsvpDeadline: "",
 
-  // Mừng cưới
-  qrImage: "",          // ví dụ "img/qr.png" (đặt file ảnh mã QR vào thư mục img)
-  bankName: "",         // ví dụ "Vietcombank"
-  bankAccount: "",      // số tài khoản
-  bankHolder: ""        // tên chủ tài khoản
+  // Mừng cưới — mỗi người một mã QR.
+  // Ảnh QR đặt vào thư mục img, ví dụ "img/qr-chu-re.png". Để trống thì hiện ô giữ chỗ.
+  groomQr: "",
+  groomBank: "",        // ví dụ "Vietcombank"
+  groomAccount: "",     // số tài khoản chú rể
+  groomHolder: "",      // ví dụ "LE TU ANH"
+
+  brideQr: "",
+  brideBank: "",
+  brideAccount: "",
+  brideHolder: ""       // ví dụ "TRUONG NGOC KIM CHAU"
 };

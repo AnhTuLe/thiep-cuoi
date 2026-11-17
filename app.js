@@ -12,14 +12,32 @@
   document.querySelectorAll('[data-needs]').forEach(function (el) {
     el.hidden = !cfg[el.getAttribute('data-needs')];
   });
-  if (cfg.qrImage) {
-    document.querySelectorAll('[data-qr]').forEach(function (el) {
-      var img = document.createElement('img');
-      img.src = cfg.qrImage;
-      img.alt = 'Mã QR mừng cưới';
-      img.style.cssText = 'display:block;width:100%;height:100%;object-fit:contain';
-      el.replaceWith(img);
+  document.querySelectorAll('[data-qr]').forEach(function (el) {
+    var src = cfg[el.getAttribute('data-qr')];
+    if (!src) return;
+    var img = document.createElement('img');
+    img.src = src;
+    img.alt = 'Mã QR mừng cưới';
+    img.style.cssText = 'display:block;width:100%;height:100%;object-fit:contain';
+    el.replaceWith(img);
+  });
+  document.querySelectorAll('[data-copy]').forEach(function (b) {
+    var label = b.textContent;
+    b.addEventListener('click', function () {
+      var v = String(cfg[b.getAttribute('data-copy')] || '').replace(/\s+/g, '');
+      if (!v) return;
+      var done = function () { b.textContent = 'ĐÃ SAO CHÉP ✓'; setTimeout(function () { b.textContent = label; }, 1800); };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(v).then(done, function () { fallback(v); done(); });
+      } else { fallback(v); done(); }
     });
+  });
+  function fallback(v) {
+    var t = document.createElement('textarea');
+    t.value = v; t.setAttribute('readonly', ''); t.style.cssText = 'position:fixed;opacity:0';
+    document.body.appendChild(t); t.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    t.remove();
   }
 
   /* ---------- Tên khách mời ----------
