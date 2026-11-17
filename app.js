@@ -162,15 +162,15 @@
   var guests = form.elements.namedItem('guests');
   var status = document.createElement('p');
   status.setAttribute('role', 'status');
-  status.style.cssText = 'margin:0;font-size:14px;line-height:1.6;text-align:center;min-height:1.6em';
+  status.style.cssText = 'margin:0;font-size:.95em;line-height:1.6;text-align:center;min-height:1.6em';
   form.appendChild(status);
 
   var thanks = document.createElement('div');
   thanks.hidden = true;
   thanks.setAttribute('role', 'status');
   thanks.style.cssText = 'width:100%;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;padding:12px 0';
-  thanks.innerHTML = '<p data-thanks style="margin:0;font-size:17px;line-height:1.7"></p>' +
-    '<button type="button" data-again style="min-height:44px;padding:0 20px;border:0;background:none;color:inherit;font:inherit;font-size:14px;text-decoration:underline;cursor:pointer">Sửa lại câu trả lời</button>';
+  thanks.innerHTML = '<p data-thanks style="margin:0;font-size:1.15em;line-height:1.7"></p>' +
+    '<button type="button" data-again style="min-height:44px;padding:0 20px;border:0;background:none;color:inherit;font:inherit;font-size:.95em;text-decoration:underline;cursor:pointer">Sửa lại câu trả lời</button>';
   form.after(thanks);
 
   function attendValue() {
