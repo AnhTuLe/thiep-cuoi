@@ -47,6 +47,6 @@ Bìa hiện "Kính mời …" và ô họ tên trong form được điền sẵn
 
 ## 4. Sửa nội dung
 
-- Thông tin trong `config.js`: sửa rồi deploy lại.
+- Thông tin trong `config.js`: sửa rồi deploy lại. Khi sửa `config.js` hoặc `app.js`, tăng số `?v=` ở cuối dòng `<script src=...>` trong hai file HTML (vd `?v=3`) để điện thoại khách tải bản mới ngay, không dùng bản cũ trong bộ nhớ đệm.
 - Thay ảnh: dùng tên file mới (vd `bia-v2.jpg`) thay vì ghi đè, để điện thoại không giữ ảnh cũ trong bộ nhớ đệm.
 - Khách đã mở link chỉ cần tải lại trang là thấy bản mới.
