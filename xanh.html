@@ -24,7 +24,7 @@ button:disabled{opacity:.6;cursor:default}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--olive-d);outline-offset:3px}
 .nw{white-space:nowrap}
-.hoa{position:absolute;z-index:6;pointer-events:none;height:auto}
+.hoa{position:absolute;z-index:6;pointer-events:none;height:auto;filter:drop-shadow(0 4px 6px rgba(40,10,16,.25))}
 @keyframes sway{0%,100%{transform:var(--t) rotate(0)}50%{transform:var(--t) rotate(2.5deg)}}
 @media (prefers-reduced-motion:no-preference){.hoa{animation:sway 6s ease-in-out infinite;transform-origin:50% 70%}}
 .script{font-family:'Great Vibes',cursive;font-weight:400;-webkit-text-stroke:.4px currentColor;line-height:1.1}
@@ -80,7 +80,7 @@ section{padding:56px 24px;text-align:center;display:flex;flex-direction:column;a
 <div class="cap" style="color: var(--olive-d)">Thiệp mời cưới</div>
 <div class="if-guest" style="display: contents" hidden><div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px">Kính gửi</span><span class="script" style="font-size: 34px; color: var(--olive-d)"><span data-guest></span></span></div></div>
 <button type="button" id="open-card" aria-label="Mở thiệp" style="width: min(340px, 86vw); padding: 0; border: 0; background: none; cursor: pointer">
-<div class="env"><img class="hoa" src="img/hoa.svg" alt="" aria-hidden="true" style="--t: rotate(16deg); width: 30%; right: -7%; top: -30%; transform: var(--t)"><div class="liner"></div><div class="front"></div><div class="flap"></div><div class="seal"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:46%;height:46%;fill:#C9B48F"><path d="M12 21s-7.5-4.6-9.6-9.2C1 8.6 3 5 6.5 5c2.1 0 3.6 1.2 5.5 3.3C13.9 6.2 15.4 5 17.5 5 21 5 23 8.6 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg></div></div>
+<div class="env"><img class="hoa" src="img/hoa-rum-1.png" alt="" aria-hidden="true" style="--t: rotate(18deg); width: 22%; right: -5%; top: -26%; transform: var(--t)"><div class="liner"></div><div class="front"></div><div class="flap"></div><div class="seal"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:46%;height:46%;fill:#C9B48F"><path d="M12 21s-7.5-4.6-9.6-9.2C1 8.6 3 5 6.5 5c2.1 0 3.6 1.2 5.5 3.3C13.9 6.2 15.4 5 17.5 5 21 5 23 8.6 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg></div></div>
 </button>
 <div style="font-size: 16px; color: var(--olive-d)">Chạm vào con dấu để mở thiệp</div>
 </div>
@@ -89,7 +89,7 @@ section{padding:56px 24px;text-align:center;display:flex;flex-direction:column;a
 <main>
 <section style="padding-top: 130px; gap: 0">
 <div style="width: 100%; position: relative; z-index: 1">
-<div class="env" style="aspect-ratio: 1.75"><img class="hoa" src="img/hoa.svg" alt="" aria-hidden="true" style="--t: rotate(14deg); width: 34%; right: -10%; top: -62%; transform: var(--t)"><img class="hoa" src="img/hoa.svg" alt="" aria-hidden="true" style="--t: scaleX(-1) rotate(10deg); width: 22%; left: -6%; top: -48%; transform: var(--t); animation-delay: -2s"><div class="liner"></div><div class="peek" style="top: -62%; bottom: 40%; left: 8%; right: 8%"><img src="img/album-vuon.jpg" alt="Cô dâu chú rể đứng hai bên đài phun nước giữa vườn hoa" style="object-position: 55% 50%"></div><div class="front"></div><div class="seal" style="top: 74%"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:46%;height:46%;fill:#C9B48F"><path d="M12 21s-7.5-4.6-9.6-9.2C1 8.6 3 5 6.5 5c2.1 0 3.6 1.2 5.5 3.3C13.9 6.2 15.4 5 17.5 5 21 5 23 8.6 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg></div></div>
+<div class="env" style="aspect-ratio: 1.75"><img class="hoa" src="img/hoa-rum-1.png" alt="" aria-hidden="true" style="--t: rotate(16deg); width: 27%; right: -7%; top: -72%; transform: var(--t)"><img class="hoa" src="img/hoa-rum-2.png" alt="" aria-hidden="true" style="--t: scaleX(-1) rotate(-6deg); width: 26%; left: -9%; top: -40%; transform: var(--t); animation-delay: -2s"><div class="liner"></div><div class="peek" style="top: -62%; bottom: 40%; left: 8%; right: 8%"><img src="img/album-vuon.jpg" alt="Cô dâu chú rể đứng hai bên đài phun nước giữa vườn hoa" style="object-position: 55% 50%"></div><div class="front"></div><div class="seal" style="top: 74%"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:46%;height:46%;fill:#C9B48F"><path d="M12 21s-7.5-4.6-9.6-9.2C1 8.6 3 5 6.5 5c2.1 0 3.6 1.2 5.5 3.3C13.9 6.2 15.4 5 17.5 5 21 5 23 8.6 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg></div></div>
 </div>
 <div class="paper" style="margin-top: 28px; padding: 40px 24px 36px">
 <div class="cap" style="color: var(--olive)">Trân trọng kính mời</div>
@@ -112,7 +112,7 @@ section{padding:56px 24px;text-align:center;display:flex;flex-direction:column;a
 <div><div class="cap" style="font-size: 12px; opacity: .85">Nhà gái</div><div style="margin-top: 6px; line-height: 1.5"><span class="nw">Ông Trương Văn Khoa</span><br><span class="nw">Bà Chiêm Thị Kim Tuyến</span></div></div>
 </div>
 <div class="paper" style="margin-top: 22px">
-<img class="hoa" src="img/hoa.svg" alt="" aria-hidden="true" style="--t: rotate(-8deg); width: 92px; right: -18px; bottom: -36px; transform: var(--t); animation-delay: -3s">
+<img class="hoa" src="img/hoa-rum-2.png" alt="" aria-hidden="true" style="--t: rotate(-4deg); width: 104px; right: -22px; bottom: -44px; transform: var(--t); animation-delay: -3s">
 <div class="script" style="font-size: 40px; color: var(--olive-d)">Tiệc cưới</div>
 <div style="margin-top: 8px; font-size: 20px">18:00 · Chủ Nhật, 06.12.2026</div>
 <div style="font-size: 15px; font-style: italic; opacity: .8">Nhằm ngày 28 tháng 10 năm Bính Ngọ</div>
@@ -164,7 +164,7 @@ section{padding:56px 24px;text-align:center;display:flex;flex-direction:column;a
 </section>
 
 <section class="olive" style="gap: 0">
-<div style="width: 100%"><div class="env" style="aspect-ratio: 1.6; background: var(--olive-d)"><img class="hoa" src="img/hoa.svg" alt="" aria-hidden="true" style="--t: rotate(12deg); width: 32%; right: -9%; top: -30%; transform: var(--t); animation-delay: -1s"><div class="liner"></div><div class="peek" style="top: -18%; bottom: 22%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--olive-d); text-align: center"><div class="cap" style="font-size: 14px">Xác nhận</div><div class="cap" style="font-size: 14px">tham dự</div></div><div class="front" style="background: var(--olive-d)"></div><div class="seal" style="top: 56%"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:46%;height:46%;fill:#C9B48F"><path d="M12 21s-7.5-4.6-9.6-9.2C1 8.6 3 5 6.5 5c2.1 0 3.6 1.2 5.5 3.3C13.9 6.2 15.4 5 17.5 5 21 5 23 8.6 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg></div></div></div>
+<div style="width: 100%"><div class="env" style="aspect-ratio: 1.6; background: var(--olive-d)"><img class="hoa" src="img/hoa-rum-1.png" alt="" aria-hidden="true" style="--t: rotate(14deg); width: 22%; right: -5%; top: -34%; transform: var(--t); animation-delay: -1s"><div class="liner"></div><div class="peek" style="top: -18%; bottom: 22%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--olive-d); text-align: center"><div class="cap" style="font-size: 14px">Xác nhận</div><div class="cap" style="font-size: 14px">tham dự</div></div><div class="front" style="background: var(--olive-d)"></div><div class="seal" style="top: 56%"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:46%;height:46%;fill:#C9B48F"><path d="M12 21s-7.5-4.6-9.6-9.2C1 8.6 3 5 6.5 5c2.1 0 3.6 1.2 5.5 3.3C13.9 6.2 15.4 5 17.5 5 21 5 23 8.6 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg></div></div></div>
 <div class="paper" style="margin-top: 28px; padding: 34px 22px">
 <p style="font-size: 20px; font-style: italic; line-height: 1.4">Bạn sẽ đến chung vui chứ?</p>
 <p data-needs="rsvpDeadline" style="margin-top: 4px; font-size: 16px">Vui lòng phản hồi trước ngày <span data-cfg="rsvpDeadline"></span>.</p>
