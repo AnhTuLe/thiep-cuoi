@@ -21,6 +21,18 @@ img{max-width:100%}
 button:disabled{opacity:.6;cursor:default}
 </style>
 <style>
+/* Màn intro có ảnh nền: lớp ảnh + lớp tối phía dưới, chữ nằm trên. */
+#intro{overflow:hidden}
+#intro > *{position:relative}
+#intro > .intro-bg{position:absolute;inset:0;z-index:0}
+#intro > .intro-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block}
+#intro > .intro-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,22,17,.55) 0%,rgba(20,22,17,0) 22%,rgba(20,22,17,0) 42%,rgba(20,22,17,.55) 66%,rgba(20,22,17,.82) 100%)}
+@media (min-width:600px){#intro{padding-left:max(24px,calc(50% - 216px))!important;padding-right:max(24px,calc(50% - 216px))!important}#intro > .intro-bg{left:50%;right:auto;width:480px;transform:translateX(-50%)}}
+@media (max-height:700px){#intro .intro-names{font-size:46px!important}}
+@keyframes intro-zoom{from{transform:scale(1.12)}to{transform:scale(1)}}
+@media (prefers-reduced-motion:no-preference){#intro > .intro-bg img{animation:intro-zoom 9s ease-out both}}
+</style>
+<style>
 /* Layout: một cột thiệp rộng tối đa 480px, canh giữa; ảnh tràn mép, chữ giữ lề. */
 :root{--bg:#F4F3EE;--fg:#1F221C;--muted:#5B6052;--accent:#4A5040;--rose:#B4476A;--tone:#858A77;--display:'Playfair Display',Georgia,serif;--body:'Be Vietnam Pro',system-ui,sans-serif}
 body{margin:0;background:var(--bg);color:var(--fg)}
@@ -48,24 +60,25 @@ main > section > *,main > img,main > footer > *{animation:rv-in linear both;anim
 <body data-template="editorial">
 <div id="card" class="pre" style="background: #F4F3EE; color: #1F221C; font-family: 'Be Vietnam Pro', system-ui, sans-serif; font-size: 15px; line-height: 1.7; font-variant-numeric: lining-nums">
 <div id="intro-wrap" style="display: contents">
-<div id="intro" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 40; box-sizing: border-box; padding: 20px 24px 32px; background: var(--tone); color: #1C1F18; display: flex; flex-direction: column; justify-content: space-between; gap: 32px; transform: translateY(0); transition: transform 0.9s cubic-bezier(0.7, 0, 0.2, 1)">
-<div style="padding-bottom: 14px; border-bottom: 1px solid #1C1F18; display: flex; justify-content: space-between; gap: 12px; font-size: 12px; font-weight: 500; letter-spacing: 0.24em; line-height: 20px">
+<div id="intro" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 40; box-sizing: border-box; padding: 20px 24px 32px; background: #2A2D24; color: #F4F3EE; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; transform: translateY(0); transition: transform 0.9s cubic-bezier(0.7, 0, 0.2, 1)">
+<div class="intro-bg" aria-hidden="true"><img src="img/intro.jpg" alt="" fetchpriority="high"></div>
+<div style="padding-bottom: 14px; border-bottom: 1px solid rgba(244,243,238,.7); display: flex; justify-content: space-between; gap: 12px; font-size: 12px; font-weight: 500; letter-spacing: 0.24em; line-height: 20px">
 <span>THIỆP CƯỚI</span>
 <span>06 . 12 . 2026</span>
 </div>
-<div style="display: flex; flex-direction: column; gap: 28px">
-<div style="font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 58px; line-height: 1.08; letter-spacing: -0.01em; color: #FFFFFF">
+<div style="margin-top: auto; display: flex; flex-direction: column; gap: 22px">
+<div class="intro-names" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 58px; text-shadow: 0 2px 24px rgba(0,0,0,.35); line-height: 1.08; letter-spacing: -0.01em; color: #FFFFFF">
 <div>Tú Anh</div>
 <div><span style="font-style: italic; font-weight: 400">&amp;</span> Kim Châu</div>
 </div>
 <div class="if-guest" style="display: contents" hidden>
-<div style="padding-top: 16px; border-top: 1px solid #1C1F18; display: flex; flex-direction: column; gap: 4px">
+<div style="padding-top: 16px; border-top: 1px solid rgba(244,243,238,.7); display: flex; flex-direction: column; gap: 4px">
 <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.2em">KÍNH MỜI</div>
 <div style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 24px; line-height: 1.4"><span data-guest></span></div>
 </div>
 </div>
 </div>
-<button type="button" id="open-card" style="min-height: 56px; border: 0; border-radius: 0; background: #1F221C; color: #F4F3EE; font: inherit; font-size: 13px; font-weight: 600; letter-spacing: 0.2em; cursor: pointer">MỞ THIỆP →</button>
+<button type="button" id="open-card" style="min-height: 56px; border: 0; border-radius: 0; background: #F4F3EE; color: #1F221C; font: inherit; font-size: 13px; font-weight: 600; letter-spacing: 0.2em; cursor: pointer">MỞ THIỆP →</button>
 </div>
 </div>
 <main style="max-width: 480px; margin: 0 auto">
@@ -256,7 +269,7 @@ main > section > *,main > img,main > footer > *{animation:rv-in linear both;anim
 </div>
 </div>
 </div>
-<script src="config.js?v=4"></script>
-<script src="app.js?v=4"></script>
+<script src="config.js?v=5"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>
