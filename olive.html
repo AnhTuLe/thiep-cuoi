@@ -38,19 +38,17 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
 .env .fr::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 2px,transparent 2px 6px)}
 .env .tf{position:absolute;left:0;right:0;top:0;height:36%;z-index:1;clip-path:polygon(0 100%,50% 0,100% 100%);background:var(--ol-d);transform:translateY(-99%)}
 .hs{position:absolute;left:50%;top:46%;width:17%;transform:translate(-50%,-50%);z-index:6;filter:drop-shadow(0 3px 4px rgba(0,0,0,.25))}
-/* giấy viền ren */
-.lace{position:relative;width:100%;padding:9px;background:radial-gradient(circle at 9px 9px,var(--lc,#DCCFB2) 8.6px,transparent 9.2px) 0 0/18px 18px round;filter:drop-shadow(0 8px 12px rgba(40,48,20,.2))}
-.lace > div{box-shadow:0 0 0 1px var(--lc,#DCCFB2)}
-.lace > div{position:relative;background:var(--paper);padding:34px 20px 30px;outline:1px dashed rgba(110,125,70,.45);outline-offset:-8px}
-.lace.g{--lc:#7F8D55}.lace.g > div{background:var(--ol);color:#F4F1E8;outline-color:rgba(244,241,232,.45)}
+.frame{position:relative;width:100%;border:30px solid transparent;border-image:url(img/khung-ren.webp) 52 fill / 30px / 0 round;filter:drop-shadow(0 10px 14px rgba(40,48,20,.22))}
+.frame > div{padding:14px 4px 10px}
+.frame.sm{border-width:22px;border-image-width:22px}
 .card{position:relative;width:100%;background:var(--paper);color:var(--ink);padding:30px 22px;box-shadow:0 10px 22px -12px rgba(30,36,14,.5)}
 .card::before{content:"";position:absolute;inset:7px;border:1px solid rgba(110,125,70,.45)}
 .card > *{position:relative}
 .card > .fl{position:absolute}
 .ev{position:relative;width:100%;display:flex;justify-content:flex-start;padding-left:2%}
-.ev-c{width:72%;padding:20px 14px 18px;font-size:15px;line-height:1.5;background:#F7F4EC;box-shadow:0 12px 22px -12px rgba(20,26,8,.6),0 1px 0 rgba(255,255,255,.5) inset}
-.ev-c::before{inset:6px;border-color:rgba(110,125,70,.35)}
-.ev-c::after{content:"";position:absolute;inset:9px;border:1px solid rgba(110,125,70,.18);pointer-events:none}
+.ev-c{width:80%;padding:8px 2px 6px;font-size:15px;line-height:1.5;background:none;box-shadow:none;border:22px solid transparent;border-image:url(img/khung-ren.webp) 52 fill / 22px / 0 round;filter:drop-shadow(0 10px 12px rgba(20,26,8,.35))}
+.ev-c::before{display:none}
+
 .ev-t{font-size:32px;color:var(--ol-d);margin-bottom:4px}
 .ev-s{font-size:13px;font-style:italic;opacity:.8}
 .ev-k{font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--ol)}
@@ -122,7 +120,7 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
 </section>
 
 <section style="padding-top: 22px">
-<div class="lace"><div>
+<div class="frame"><div>
 <div class="sc" style="font-size: min(50px, calc((100vw - 120px) / 5)); color: var(--ol-d)"><div class="nw">Tú Anh</div><div style="font-size: .6em; margin: 4px 0">và</div><div class="nw">Kim Châu</div></div>
 <div style="margin-top: 14px; font-size: 26px; font-weight: 600; letter-spacing: .14em; color: var(--ol-d)">06 . 12 . 2026</div>
 <p style="margin-top: 10px; font-size: 17px">Hai tâm hồn, một lời hẹn ước.<br>Trân trọng kính mời bạn<br>đến chung vui ngày trọng đại của chúng tôi.</p>
@@ -220,7 +218,7 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
 </section>
 
 <section style="padding: 44px 22px 56px; background: var(--paper)">
-<div style="position: relative; width: 86%; isolation: isolate"><img class="tuck b" src="img/hong-mon-doi.webp" alt="" aria-hidden="true" loading="lazy" style="width:34%;right:-14%;top:-34%;transform:rotate(10deg)"><img class="tuck f" src="img/hong-mon-doi.webp" alt="" aria-hidden="true" loading="lazy" style="width:34%;right:-14%;top:-34%;transform:rotate(10deg);clip-path:inset(0 0 50% 0)"><div class="lace g" style="position: relative; z-index: 1"><div style="padding: 22px 18px">
+<div style="position: relative; width: 86%; isolation: isolate"><img class="tuck b" src="img/hong-mon-doi.webp" alt="" aria-hidden="true" loading="lazy" style="width:34%;right:-14%;top:-34%;transform:rotate(10deg)"><img class="tuck f" src="img/hong-mon-doi.webp" alt="" aria-hidden="true" loading="lazy" style="width:34%;right:-14%;top:-34%;transform:rotate(10deg);clip-path:inset(0 0 50% 0)"><div style="position: relative; z-index: 1; background: var(--ol); color: #F4F1E8; padding: 24px 18px; outline: 1px solid rgba(244,241,232,.5); outline-offset: -8px; box-shadow: 0 10px 18px -10px rgba(30,36,14,.5)"><div>
 <p style="font-size: 17px">Hãy cùng chúng tôi chung vui<br>trong một trong những ngày<br>ý nghĩa nhất cuộc đời.</p>
 <p data-needs="rsvpDeadline" style="margin-top: 6px; font-size: 16px">Vui lòng phản hồi trước ngày <span data-cfg="rsvpDeadline"></span>.</p>
 </div></div></div>
