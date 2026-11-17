@@ -49,7 +49,12 @@
   /* ---------- Màn mở thiệp ---------- */
   var openBtn = document.getElementById('open-card');
   if (openBtn && intro) {
+    try { history.scrollRestoration = 'manual'; } catch (e) {}
+    window.scrollTo(0, 0);
+    document.documentElement.style.overflow = 'hidden';
     openBtn.addEventListener('click', function () {
+      window.scrollTo(0, 0);
+      document.documentElement.style.overflow = '';
       card.className = 'go';
       intro.style.transform = 'translateY(-100%)';
       setTimeout(function () { if (introWrap) introWrap.hidden = true; }, 950);
