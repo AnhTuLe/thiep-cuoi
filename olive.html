@@ -46,6 +46,7 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
 .card{position:relative;width:100%;background:var(--paper);color:var(--ink);padding:30px 22px;box-shadow:0 10px 22px -12px rgba(30,36,14,.5)}
 .card::before{content:"";position:absolute;inset:7px;border:1px solid rgba(110,125,70,.45)}
 .card > *{position:relative}
+.card > .fl{position:absolute}
 .pill{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:0 20px;border:1px solid rgba(110,125,70,.6);border-radius:18px;background:none;color:var(--ol-d);text-decoration:none;font-size:15px;cursor:pointer}
 .oval{width:min(230px,64vw);aspect-ratio:3/4;border-radius:50%;padding:12px;background:#7A894F;box-shadow:inset 0 0 0 1px rgba(244,241,232,.35),0 0 0 10px var(--ol),0 0 0 11px rgba(244,241,232,.25)}
 .oval img{width:100%;height:100%;object-fit:cover;border-radius:50%;box-shadow:0 0 0 2px rgba(244,241,232,.5)}
@@ -66,24 +67,44 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
 .opt:has(input:checked){background:var(--ol);color:#fff}
 .opt:has(input:focus-visible){outline:2px solid var(--ol-d);outline-offset:2px}
 .send{min-height:46px;border:0;border-radius:4px;background:var(--ol);color:#fff;font-size:16px;font-weight:700;letter-spacing:.12em;cursor:pointer}
+#intro{position:fixed;inset:0;z-index:40;background:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;padding:24px;text-align:center;transition:opacity .5s}
+#intro .cl{position:relative;width:min(320px,82vw);aspect-ratio:1.45;isolation:isolate}
+#intro .cl .bk{position:absolute;inset:0;border-radius:4px;background:var(--ol-d);box-shadow:0 18px 30px -14px rgba(30,36,14,.5)}
+#intro .cl .fr{position:absolute;inset:0;z-index:2;clip-path:polygon(0 0,50% 52%,100% 0,100% 100%,0 100%);background:linear-gradient(180deg,#7C8B50,var(--ol));border-radius:4px}
+#intro .cl .fp{position:absolute;inset:0 0 auto 0;height:56%;z-index:3;clip-path:polygon(0 0,100% 0,50% 100%);background:linear-gradient(180deg,#56653A,#6A7942);transform-origin:top;transition:transform .7s ease}
+#intro .cl .hs{top:54%;z-index:5;transition:opacity .3s}
+#intro.opening .cl .fp{transform:rotateX(180deg)}
+#intro.opening .cl .hs{opacity:0}
+#intro.done{opacity:0;pointer-events:none}
+@keyframes bob{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.07)}}
+@media (prefers-reduced-motion:no-preference){#intro .cl .hs{animation:bob 2.2s ease-in-out infinite}}
 @keyframes rv{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:no-preference){@supports (animation-timeline:view()){section > *:not(.fl){animation:rv linear both;animation-timeline:view();animation-range:entry 0% entry 35%}}}
 </style>
 </head>
 <body data-template="olive">
 <div id="card">
+<div id="intro" role="dialog" aria-label="Mở thiệp">
+<div style="font-size: 14px; font-weight: 600; letter-spacing: .3em; color: var(--ol-d)">THIỆP MỜI CƯỚI</div>
+<div class="if-guest" style="display: contents" hidden><div><div style="font-size: 15px">Kính gửi</div><div class="sc" style="font-size: 32px; color: var(--pink)"><span data-guest></span></div></div></div>
+<button type="button" id="tap" aria-label="Chạm để mở thiệp" style="padding: 0; border: 0; background: none; cursor: pointer">
+<div class="cl"><div class="bk"></div><div class="fr"></div><div class="fp"></div><svg class="hs" viewBox="0 0 40 36" aria-hidden="true"><defs><radialGradient id="hg1" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#FFF8EC"/><stop offset=".6" stop-color="#EEDFC7"/><stop offset="1" stop-color="#D2BC98"/></radialGradient></defs><path d="M20 34S2 23 2 11C2 5 6.5 2 11 2c4 0 7 2.5 9 6 2-3.5 5-6 9-6 4.5 0 9 3 9 9 0 12-18 23-18 23z" fill="url(#hg1)" stroke="#C9B48F" stroke-width="1"/><path d="M20 28S8 20 8 12c0-3 2.4-5 5-5 3 0 5 2.5 7 5 2-2.5 4-5 7-5 2.6 0 5 2 5 5 0 8-12 16-12 16z" fill="none" stroke="#C9B48F" stroke-width=".8" opacity=".7"/></svg>
+<img class="fl" src="img/bo-chinh.webp" alt="" aria-hidden="true" style="width:32%;right:-11%;top:-12%"></div>
+</button>
+<div style="font-size: 17px; color: var(--ol-d)">Chạm vào con dấu để mở thiệp</div>
+</div>
 <main>
 
-<section style="padding-top: 70px; padding-bottom: 30px">
+<section style="padding-top: 150px; padding-bottom: 30px">
 <div style="position: relative; width: 86%">
 <div class="env">
 <div class="bk"></div><div class="tf"></div><div class="liner"></div>
-<div class="in" style="left: 10%; right: 10%; top: -30%; bottom: 30%; background: #fff; padding: 7px; transform: rotate(-3deg); box-shadow: 0 4px 12px rgba(0,0,0,.18)"><img src="img/album-vuon.jpg" alt="Cô dâu chú rể đứng hai bên đài phun nước giữa vườn hoa" style="width: 100%; height: 100%; object-fit: cover; object-position: 55% 50%"></div>
-<svg class="in" viewBox="0 0 200 60" aria-hidden="true" style="left: -4%; top: -34%; width: 46%; z-index: 4"><path d="M8 6C40 50 90 58 150 44" fill="none" stroke="#EDE6D6" stroke-width=".6"/><circle cx="8" cy="6" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="13" cy="13" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="19" cy="20" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="25" cy="26" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="32" cy="31" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="39" cy="36" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="47" cy="40" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="55" cy="44" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="63" cy="47" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="71" cy="49" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="80" cy="51" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="89" cy="52" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="98" cy="52" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="107" cy="51" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="116" cy="50" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="125" cy="48" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="134" cy="47" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="142" cy="45" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="150" cy="44" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/></svg>
+<div class="in" style="left: 8%; right: 8%; top: -58%; bottom: 74%; background: #fff; padding: 7px; transform: rotate(-3deg); box-shadow: 0 4px 12px rgba(0,0,0,.18)"><img src="img/album-vuon.jpg" alt="Cô dâu chú rể đứng hai bên đài phun nước giữa vườn hoa" style="width: 100%; height: 100%; object-fit: cover; object-position: 55% 50%"></div>
+<svg class="in" viewBox="0 0 200 60" aria-hidden="true" style="left: -6%; top: -62%; width: 46%; z-index: 4"><path d="M8 6C40 50 90 58 150 44" fill="none" stroke="#EDE6D6" stroke-width=".6"/><circle cx="8" cy="6" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="13" cy="13" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="19" cy="20" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="25" cy="26" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="32" cy="31" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="39" cy="36" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="47" cy="40" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="55" cy="44" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="63" cy="47" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="71" cy="49" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="80" cy="51" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="89" cy="52" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="98" cy="52" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="107" cy="51" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="116" cy="50" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="125" cy="48" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="134" cy="47" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="142" cy="45" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/><circle cx="150" cy="44" r="2.6" fill="#FBF7EE" stroke="#D8CDB7" stroke-width=".5"/></svg>
 <div class="fr"></div>
-<svg class="hs" viewBox="0 0 40 36" aria-hidden="true"><defs><radialGradient id="hg" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#FFF8EC"/><stop offset=".6" stop-color="#EEDFC7"/><stop offset="1" stop-color="#D2BC98"/></radialGradient></defs><path d="M20 34S2 23 2 11C2 5 6.5 2 11 2c4 0 7 2.5 9 6 2-3.5 5-6 9-6 4.5 0 9 3 9 9 0 12-18 23-18 23z" fill="url(#hg)" stroke="#C9B48F" stroke-width="1"/><path d="M20 28S8 20 8 12c0-3 2.4-5 5-5 3 0 5 2.5 7 5 2-2.5 4-5 7-5 2.6 0 5 2 5 5 0 8-12 16-12 16z" fill="none" stroke="#C9B48F" stroke-width=".8" opacity=".7"/></svg>
+<svg class="hs" style="top:62%" viewBox="0 0 40 36" aria-hidden="true"><defs><radialGradient id="hg2" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#FFF8EC"/><stop offset=".6" stop-color="#EEDFC7"/><stop offset="1" stop-color="#D2BC98"/></radialGradient></defs><path d="M20 34S2 23 2 11C2 5 6.5 2 11 2c4 0 7 2.5 9 6 2-3.5 5-6 9-6 4.5 0 9 3 9 9 0 12-18 23-18 23z" fill="url(#hg2)" stroke="#C9B48F" stroke-width="1"/><path d="M20 28S8 20 8 12c0-3 2.4-5 5-5 3 0 5 2.5 7 5 2-2.5 4-5 7-5 2.6 0 5 2 5 5 0 8-12 16-12 16z" fill="none" stroke="#C9B48F" stroke-width=".8" opacity=".7"/></svg>
 </div>
-<img class="fl" src="img/bo-chinh.webp" alt="" aria-hidden="true" style="width:44%;right:-16%;top:-38%">
+<img class="fl" src="img/bo-chinh.webp" alt="" aria-hidden="true" style="width:40%;right:-15%;top:-62%">
 </div>
 </section>
 
@@ -109,7 +130,7 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
 <div style="margin-top: 6px; font-size: 17px; font-weight: 700">Nhà hàng tiệc cưới Venus</div>
 <div style="font-size: 15px"><span class="nw">117-117A Lê Trọng Tấn,</span> <span class="nw">Tân Sơn Nhì, TP.HCM</span></div>
 <a class="pill" style="margin-top: 12px" href="https://www.google.com/maps/search/?api=1&amp;query=Nh%C3%A0%20h%C3%A0ng%20ti%E1%BB%87c%20c%C6%B0%E1%BB%9Bi%20Venus&amp;query_place_id=ChIJZ8uWmeIrdTERC9eZu57p86w" target="_blank" rel="noopener">Xem bản đồ</a>
-<img class="fl" src="img/hong-mon-doi.webp" alt="" aria-hidden="true" loading="lazy" style="width:44%;right:-30%;bottom:-24%">
+<img class="fl" src="img/hong-mon-doi.webp" alt="" aria-hidden="true" loading="lazy" style="width:38%;right:-18%;bottom:-16%;transform:rotate(-8deg)">
 </div>
 <div class="card" style="margin-top: 18px; width: 82%">
 <div class="sc" style="font-size: 36px; color: var(--ol-d)">Hai gia đình</div>
@@ -121,17 +142,8 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
 </section>
 
 <section style="padding-top: 60px">
-<div style="position: relative; width: 86%">
-<div class="env" style="aspect-ratio: 1.6">
-<div class="bk"></div><div class="tf"></div><div class="liner"></div>
-<div class="in" style="left: 9%; right: 9%; top: -38%; bottom: 14%; background: var(--paper); padding: 18px 12px; box-shadow: 0 4px 12px rgba(0,0,0,.15); display: flex; flex-direction: column; align-items: center; outline: 1px solid rgba(110,125,70,.4); outline-offset: -6px">
-<div class="sc" style="font-size: 30px; color: var(--ol-d)">Album</div>
-<div style="font-size: 14px">Những khoảnh khắc của chúng tôi</div>
-</div>
-<div class="fr"></div>
-<svg class="hs" viewBox="0 0 40 36" aria-hidden="true"><defs><radialGradient id="hg" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#FFF8EC"/><stop offset=".6" stop-color="#EEDFC7"/><stop offset="1" stop-color="#D2BC98"/></radialGradient></defs><path d="M20 34S2 23 2 11C2 5 6.5 2 11 2c4 0 7 2.5 9 6 2-3.5 5-6 9-6 4.5 0 9 3 9 9 0 12-18 23-18 23z" fill="url(#hg)" stroke="#C9B48F" stroke-width="1"/><path d="M20 28S8 20 8 12c0-3 2.4-5 5-5 3 0 5 2.5 7 5 2-2.5 4-5 7-5 2.6 0 5 2 5 5 0 8-12 16-12 16z" fill="none" stroke="#C9B48F" stroke-width=".8" opacity=".7"/></svg>
-</div>
-</div>
+<div class="sc" style="font-size: 44px; color: var(--ol-d)">Album</div>
+<div style="margin-top: -10px; font-size: 16px; font-style: italic">Những khoảnh khắc của chúng tôi</div>
 <div style="width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px">
 <button type="button" data-lb="0" aria-label="Xem ảnh lớn" style="grid-column: 1 / -1; padding: 0; border: 0; background: #ddd; cursor: zoom-in"><img loading="lazy" src="img/album-cua.jpg" alt="Cô dâu chú rể tựa lan can, nhìn qua khung cửa gỗ" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover"></button>
 <button type="button" data-lb="1" aria-label="Xem ảnh lớn" style="padding: 0; border: 0; background: #ddd; cursor: zoom-in"><img loading="lazy" src="img/cover.jpg" alt="Cô dâu chú rể nắm tay, cùng ngước nhìn lên" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover"></button>
@@ -160,16 +172,16 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
 </div>
 </section>
 
-<section style="padding-top: 40px">
+<section style="padding-top: 90px">
 <div style="position: relative; width: 86%">
 <div class="env">
 <div class="bk"></div><div class="tf"></div><div class="liner"></div>
-<div class="in" style="left: 9%; right: 9%; top: -26%; bottom: 26%; background: var(--paper); box-shadow: 0 4px 12px rgba(0,0,0,.15); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; outline: 1px solid rgba(110,125,70,.4); outline-offset: -6px">
+<div class="in" style="left: 9%; right: 9%; top: -44%; bottom: 46%; background: var(--paper); box-shadow: 0 4px 12px rgba(0,0,0,.15); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; outline: 1px solid rgba(110,125,70,.4); outline-offset: -6px">
 <div style="font-size: 19px; font-weight: 600; letter-spacing: .14em; line-height: 1.25; color: var(--ol-d)">XÁC NHẬN<br>THAM DỰ</div>
 <a class="pill" href="#rsvp" style="min-height: 28px; padding: 0 16px; font-size: 14px">Trả lời</a>
 </div>
 <div class="fr"></div>
-<svg class="hs" viewBox="0 0 40 36" aria-hidden="true"><defs><radialGradient id="hg" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#FFF8EC"/><stop offset=".6" stop-color="#EEDFC7"/><stop offset="1" stop-color="#D2BC98"/></radialGradient></defs><path d="M20 34S2 23 2 11C2 5 6.5 2 11 2c4 0 7 2.5 9 6 2-3.5 5-6 9-6 4.5 0 9 3 9 9 0 12-18 23-18 23z" fill="url(#hg)" stroke="#C9B48F" stroke-width="1"/><path d="M20 28S8 20 8 12c0-3 2.4-5 5-5 3 0 5 2.5 7 5 2-2.5 4-5 7-5 2.6 0 5 2 5 5 0 8-12 16-12 16z" fill="none" stroke="#C9B48F" stroke-width=".8" opacity=".7"/></svg>
+<svg class="hs" style="top:64%" viewBox="0 0 40 36" aria-hidden="true"><defs><radialGradient id="hg3" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#FFF8EC"/><stop offset=".6" stop-color="#EEDFC7"/><stop offset="1" stop-color="#D2BC98"/></radialGradient></defs><path d="M20 34S2 23 2 11C2 5 6.5 2 11 2c4 0 7 2.5 9 6 2-3.5 5-6 9-6 4.5 0 9 3 9 9 0 12-18 23-18 23z" fill="url(#hg3)" stroke="#C9B48F" stroke-width="1"/><path d="M20 28S8 20 8 12c0-3 2.4-5 5-5 3 0 5 2.5 7 5 2-2.5 4-5 7-5 2.6 0 5 2 5 5 0 8-12 16-12 16z" fill="none" stroke="#C9B48F" stroke-width=".8" opacity=".7"/></svg>
 </div>
 <img class="fl" src="img/bo-ru-m.webp" alt="" aria-hidden="true" loading="lazy" style="width:28%;right:-10%;top:-24%">
 </div>
@@ -222,6 +234,14 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
 <script src="app.js?v=15"></script>
 <script>
 (function () {
+  var intro = document.getElementById('intro'), tap = document.getElementById('tap');
+  try { history.scrollRestoration = 'manual'; } catch (x) {}
+  window.scrollTo(0, 0); document.documentElement.style.overflow = 'hidden';
+  tap.addEventListener('click', function () {
+    intro.classList.add('opening');
+    setTimeout(function () { window.scrollTo(0, 0); document.documentElement.style.overflow = ''; intro.classList.add('done'); }, 900);
+    setTimeout(function () { intro.hidden = true; }, 1450);
+  });
   var t = new Date('2026-12-06T18:00:00+07:00').getTime(), e = {};
   ['d','h','m'].forEach(function (k) { e[k] = document.querySelector('[data-cd="' + k + '"]'); });
   function p(n) { return (n < 10 ? '0' : '') + n; }
