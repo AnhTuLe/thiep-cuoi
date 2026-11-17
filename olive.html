@@ -56,6 +56,20 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
 .tuck.f{z-index:3;filter:drop-shadow(0 6px 8px rgba(20,26,8,.25))}
 .ev{isolation:isolate}
 .ev-c{z-index:1}
+.alb > button{position:relative;overflow:hidden;box-shadow:0 10px 20px -12px rgba(40,48,20,.55)}
+.alb > button img{transition:transform .5s ease}
+.alb > button::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.45) 50%,transparent 65%);transform:translateX(-120%);pointer-events:none}
+@media (prefers-reduced-motion:no-preference){
+.js .alb > button{opacity:0;transform:translateY(26px) scale(.96);transition:opacity .8s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .alb > button:nth-child(2){transition-delay:.18s}.js .alb > button:nth-child(3){transition-delay:.36s}
+.js .alb > button.in-view{opacity:1;transform:none}
+.alb > button.in-view img{animation:kb 14s ease-in-out .9s infinite alternate}
+.alb > button.in-view::after{animation:shine 1.4s ease .6s 1 both}
+.alb > button:nth-child(2).in-view::after{animation-delay:.8s}.alb > button:nth-child(3).in-view::after{animation-delay:1s}
+@media (hover:hover){.alb > button:hover img{transform:scale(1.04)}}
+}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+@keyframes shine{to{transform:translateX(120%)}}
 .fam{width:100%;margin-top:8px;display:grid;grid-template-columns:1fr 1px 1fr;gap:0 12px;font-size:min(17px,calc((100vw - 78px)/19.6));line-height:1.6}
 .fam i{background:linear-gradient(transparent,rgba(244,241,232,.6),transparent)}
 .fam-k{font-size:12px;font-weight:700;letter-spacing:.22em;opacity:.85;margin-bottom:4px}
@@ -196,10 +210,10 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
 <section style="padding-top: 60px">
 <div class="sc" style="font-size: 44px; color: var(--ol-d)">Album</div>
 <div style="margin-top: -10px; font-size: 16px; font-style: italic">Những khoảnh khắc của chúng tôi</div>
-<div style="width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px">
+<div class="alb" style="width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px">
 <button type="button" data-lb="0" aria-label="Xem ảnh lớn" style="grid-column: 1 / -1; padding: 0; border: 0; background: #ddd; cursor: zoom-in"><img loading="lazy" src="img/album-cua.jpg" alt="Cô dâu chú rể tựa lan can, nhìn qua khung cửa gỗ" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover"></button>
 <button type="button" data-lb="1" aria-label="Xem ảnh lớn" style="padding: 0; border: 0; background: #ddd; cursor: zoom-in"><img loading="lazy" src="img/cover.jpg" alt="Cô dâu chú rể nắm tay, cùng ngước nhìn lên" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover"></button>
-<button type="button" data-lb="2" aria-label="Xem ảnh lớn" style="padding: 0; border: 0; background: #ddd; cursor: zoom-in"><img loading="lazy" src="img/album-bo-cau-2.jpg" alt="Chú rể hôn tay cô dâu giữa đàn bồ câu bay" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 44% 50%"></button>
+<button type="button" data-lb="2" aria-label="Xem ảnh lớn" style="padding: 0; border: 0; background: #ddd; cursor: zoom-in"><img loading="lazy" src="img/album-cau-thang.jpg" alt="Chú rể nắm tay dắt cô dâu bước xuống cầu thang thảm đỏ" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 40%"></button>
 </div>
 
 <div class="sc" style="margin-top: 34px; font-size: 40px; color: var(--ol-d)">Đếm ngược ngày cưới</div>
@@ -304,6 +318,12 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
 <script src="app.js?v=15"></script>
 <script>
 (function () {
+  document.documentElement.classList.add('js');
+  var al = document.querySelectorAll('.alb > button');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); } }); }, { threshold: .25 });
+    al.forEach(function (b) { io.observe(b); });
+  } else al.forEach(function (b) { b.classList.add('in-view'); });
   var intro = document.getElementById('intro'), tap = document.getElementById('tap');
   try { history.scrollRestoration = 'manual'; } catch (x) {}
   window.scrollTo(0, 0); document.documentElement.style.overflow = 'hidden';
