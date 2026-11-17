@@ -55,6 +55,11 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
 .ev-s{font-size:13px;font-style:italic;opacity:.8}
 .ev-k{font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--ol)}
 .ev-p{margin-top:10px;min-height:28px;padding:0 16px;font-size:13px}
+.tuck{position:absolute;pointer-events:none;height:auto}
+.tuck.b{z-index:0}
+.tuck.f{z-index:3;filter:drop-shadow(0 6px 8px rgba(20,26,8,.25))}
+.ev{isolation:isolate}
+.ev-c{z-index:1}
 .pill{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:0 20px;border:1px solid rgba(110,125,70,.6);border-radius:18px;background:none;color:var(--ol-d);text-decoration:none;font-size:15px;cursor:pointer}
 .oval{width:min(230px,64vw);aspect-ratio:3/4;border-radius:50%;padding:12px;background:#7A894F;box-shadow:inset 0 0 0 1px rgba(244,241,232,.35),0 0 0 10px var(--ol),0 0 0 11px rgba(244,241,232,.25)}
 .oval img{width:100%;height:100%;object-fit:cover;border-radius:50%;box-shadow:0 0 0 2px rgba(244,241,232,.5)}
@@ -138,7 +143,7 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
 <div>Chủ Nhật, 06.12.2026</div>
 <div class="ev-s"><span class="nw">Nhằm ngày 28 tháng 10</span> <span class="nw">năm Bính Ngọ</span></div>
 </div>
-<img class="fl" src="img/rum-doi.webp" alt="" aria-hidden="true" loading="lazy" style="width:min(26vw,110px);right:3%;top:-30%;transform:rotate(8deg)">
+<img class="tuck b" src="img/rum-doi.webp" alt="" aria-hidden="true" loading="lazy" style="width:min(30vw,124px);left:58%;top:-46%;transform:rotate(14deg)"><img class="tuck f" src="img/rum-doi.webp" alt="" aria-hidden="true" loading="lazy" style="width:min(30vw,124px);left:58%;top:-46%;transform:rotate(14deg);clip-path:inset(0 0 52% 0)">
 </div>
 <div class="ev" style="margin-top: 22px">
 <div class="card ev-c">
@@ -147,7 +152,7 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
 <div><span class="nw">117-117A Lê Trọng Tấn,</span><br><span class="nw">Tân Sơn Nhì, TP. Hồ Chí Minh</span></div>
 <a class="pill ev-p" href="https://www.google.com/maps/search/?api=1&amp;query=Nh%C3%A0%20h%C3%A0ng%20ti%E1%BB%87c%20c%C6%B0%E1%BB%9Bi%20Venus&amp;query_place_id=ChIJZ8uWmeIrdTERC9eZu57p86w" target="_blank" rel="noopener">Xem bản đồ</a>
 </div>
-<img class="fl" src="img/rum-doi-m.webp" alt="" aria-hidden="true" loading="lazy" style="width:min(24vw,100px);right:-2%;bottom:-30%;transform:rotate(-6deg)">
+<img class="tuck b" src="img/rum-doi.webp" alt="" aria-hidden="true" loading="lazy" style="width:min(30vw,124px);left:60%;top:-30%;transform:rotate(22deg)"><img class="tuck f" src="img/rum-doi.webp" alt="" aria-hidden="true" loading="lazy" style="width:min(30vw,124px);left:60%;top:-30%;transform:rotate(22deg);clip-path:inset(0 0 55% 0)">
 </div>
 <div class="ev" style="margin-top: 22px">
 <div class="card ev-c">
@@ -157,6 +162,7 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
 <div class="ev-k" style="margin-top: 6px">NHÀ GÁI</div>
 <div><span class="nw">Ông Trương Văn Khoa</span><br><span class="nw">Bà Chiêm Thị Kim Tuyến</span></div>
 </div>
+<img class="tuck b" src="img/rum-doi-m.webp" alt="" aria-hidden="true" loading="lazy" style="width:min(24vw,100px);left:-4%;top:-34%;transform:rotate(-16deg)"><img class="tuck f" src="img/rum-doi-m.webp" alt="" aria-hidden="true" loading="lazy" style="width:min(24vw,100px);left:-4%;top:-34%;transform:rotate(-16deg);clip-path:inset(0 0 55% 0)">
 </div>
 </section>
 
@@ -214,11 +220,11 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
 </section>
 
 <section style="padding: 44px 22px 56px; background: var(--paper)">
-<div class="lace g" style="width: 86%"><div style="padding: 22px 18px">
+<div style="position: relative; width: 86%; isolation: isolate"><img class="tuck b" src="img/hong-mon-doi.webp" alt="" aria-hidden="true" loading="lazy" style="width:34%;right:-14%;top:-34%;transform:rotate(10deg)"><img class="tuck f" src="img/hong-mon-doi.webp" alt="" aria-hidden="true" loading="lazy" style="width:34%;right:-14%;top:-34%;transform:rotate(10deg);clip-path:inset(0 0 50% 0)"><div class="lace g" style="position: relative; z-index: 1"><div style="padding: 22px 18px">
 <p style="font-size: 17px">Hãy cùng chúng tôi chung vui<br>trong một trong những ngày<br>ý nghĩa nhất cuộc đời.</p>
 <p data-needs="rsvpDeadline" style="margin-top: 6px; font-size: 16px">Vui lòng phản hồi trước ngày <span data-cfg="rsvpDeadline"></span>.</p>
-</div></div>
-<img class="fl" src="img/hong-mon-doi-m.webp" alt="" aria-hidden="true" loading="lazy" style="width:24%;right:-3%;top:4px">
+</div></div></div>
+
 <form id="rsvp" class="form" novalidate style="margin-top: 8px">
 <label class="fld"><span>Họ và tên *</span><input class="inp" name="fullname" type="text" maxlength="80" autocomplete="name"></label>
 <fieldset class="fld" style="margin: 0; border: 0; padding: 0"><legend style="margin-bottom: 6px">Bạn sẽ đến chung vui chứ? *</legend>
