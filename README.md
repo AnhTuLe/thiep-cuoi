@@ -28,6 +28,7 @@ Khi sửa `Code.gs` sau này: **Deploy › Manage deployments › Edit › Versi
 
 ## 2. Host
 
+- **GitHub Pages (đang dùng):** https://anhtule.github.io/thiep-cuoi/ — mỗi lần push lên nhánh main là trang tự cập nhật sau khoảng 1 phút.
 - **Vercel:** đẩy thư mục này lên một repo GitHub, Import vào Vercel (Framework: Other). Mỗi lần `git push` là trang tự cập nhật.
 - **Netlify:** kéo thả cả thư mục vào app.netlify.com/drop.
 
