@@ -12,13 +12,13 @@ window.WEDDING = {
 
   // Mừng cưới — mỗi người một mã QR.
   // Ảnh QR đặt vào thư mục img, ví dụ "img/qr-chu-re.png". Để trống thì hiện ô giữ chỗ.
-  groomQr: "",
-  groomBank: "",        // ví dụ "Vietcombank"
-  groomAccount: "",     // số tài khoản chú rể
-  groomHolder: "",      // ví dụ "LE TU ANH"
+  groomQr: "img/qr-chu-re.png",
+  groomBank: "Vietcombank",        // ví dụ "Vietcombank"
+  groomAccount: "0491000090213",     // số tài khoản chú rể
+  groomHolder: "LE TU ANH",      // ví dụ "LE TU ANH"
 
-  brideQr: "",
-  brideBank: "",
-  brideAccount: "",
-  brideHolder: ""       // ví dụ "TRUONG NGOC KIM CHAU"
+  brideQr: "img/qr-co-dau.png",
+  brideBank: "Vietcombank",
+  brideAccount: "0501000226937",
+  brideHolder: "TRUONG NGOC KIM CHAU"       // ví dụ "TRUONG NGOC KIM CHAU"
 };
