@@ -81,6 +81,26 @@
     card.className = 'go';
   }
 
+  /* ---------- Album vuốt ngang ---------- */
+  document.querySelectorAll('[data-strip]').forEach(function (strip) {
+    var sec = strip.parentElement;
+    var now = sec.querySelector('[data-strip-now]');
+    var dots = sec.querySelectorAll('[data-dot]');
+    var slides = strip.querySelectorAll('[data-lb]');
+    var raf = 0;
+    function update() {
+      raf = 0;
+      var mid = strip.scrollLeft + strip.clientWidth / 2, best = 0, d = Infinity;
+      slides.forEach(function (s, i) {
+        var c = s.offsetLeft + s.offsetWidth / 2;
+        if (Math.abs(c - mid) < d) { d = Math.abs(c - mid); best = i; }
+      });
+      if (now) now.textContent = (best < 9 ? '0' : '') + (best + 1);
+      dots.forEach(function (x, i) { x.style.opacity = i === best ? '1' : '.25'; });
+    }
+    strip.addEventListener('scroll', function () { if (!raf) raf = requestAnimationFrame(update); }, { passive: true });
+  });
+
   /* ---------- Xem ảnh lớn ---------- */
   var lb = document.getElementById('lb');
   var lbImg = document.getElementById('lb-img');

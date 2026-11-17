@@ -33,6 +33,7 @@ button:disabled{opacity:.6;cursor:default}
 @media (prefers-reduced-motion:no-preference){#intro > .intro-bg img{animation:intro-zoom 9s ease-out both}}
 </style>
 <style>
+.strip::-webkit-scrollbar{display:none}
 /* Layout: một cột thiệp rộng tối đa 480px, canh giữa; ảnh tràn mép, chữ giữ lề. */
 :root{--bg:#F4F3EE;--fg:#1F221C;--muted:#5B6052;--accent:#4A5040;--rose:#B4476A;--tone:#858A77;--display:'Playfair Display',Georgia,serif;--body:'Be Vietnam Pro',system-ui,sans-serif}
 body{margin:0;background:var(--bg);color:var(--fg)}
@@ -174,24 +175,20 @@ main > section > *,main > img,main > footer > *{animation:rv-in linear both;anim
 <a href="https://www.google.com/maps/search/?api=1&amp;query=10.8058075%2C106.6286565&amp;query_place_id=ChIJZ8uWmeIrdTERC9eZu57p86w" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; color: #1C1F18; font-size: 14px; font-weight: 600; letter-spacing: 0.12em">XEM BẢN ĐỒ →</a>
 </section>
 
-<section style="box-sizing: border-box; padding: 72px 0; display: flex; flex-direction: column; gap: 36px">
+<section style="box-sizing: border-box; padding: 72px 0; display: flex; flex-direction: column; gap: 20px">
 <div style="margin: 0 24px; font-size: 12px; font-weight: 500; letter-spacing: 0.24em"><span style="color: var(--rose)">03</span> — ALBUM</div>
-<figure style="margin: 0 24px; display: flex; flex-direction: column; gap: 10px">
-<button type="button" data-lb="0" aria-label="Xem ảnh lớn" style="display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in"><img loading="lazy" decoding="async" src="img/album-cua.jpg" alt="Cô dâu chú rể tựa lan can, nhìn qua khung cửa gỗ" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 50%"></button>
-<figcaption style="display: flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 500; letter-spacing: 0.24em"><span style="color: var(--rose)">01</span><span aria-hidden="true" style="flex-grow: 1; height: 1px; background: #1F221C; opacity: .25"></span><span style="color: #5B6052">04</span></figcaption>
-</figure>
-<figure style="margin: 0 24px; display: flex; flex-direction: column; gap: 10px">
-<button type="button" data-lb="1" aria-label="Xem ảnh lớn" style="display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in"><img loading="lazy" decoding="async" src="img/album-vuon.jpg" alt="Cô dâu chú rể đứng hai bên đài phun nước giữa vườn hoa" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 50%"></button>
-<figcaption style="display: flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 500; letter-spacing: 0.24em"><span style="color: var(--rose)">02</span><span aria-hidden="true" style="flex-grow: 1; height: 1px; background: #1F221C; opacity: .25"></span><span style="color: #5B6052">04</span></figcaption>
-</figure>
-<figure style="margin: 0 24px; display: flex; flex-direction: column; gap: 10px">
-<button type="button" data-lb="2" aria-label="Xem ảnh lớn" style="display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in"><img loading="lazy" decoding="async" src="img/album-bo-cau.jpg" alt="Chú rể hôn má cô dâu giữa đàn bồ câu bay" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: 45% 50%"></button>
-<figcaption style="display: flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 500; letter-spacing: 0.24em"><span style="color: var(--rose)">03</span><span aria-hidden="true" style="flex-grow: 1; height: 1px; background: #1F221C; opacity: .25"></span><span style="color: #5B6052">04</span></figcaption>
-</figure>
-<figure style="margin: 0 24px; display: flex; flex-direction: column; gap: 10px">
-<button type="button" data-lb="3" aria-label="Xem ảnh lớn" style="display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in"><img loading="lazy" decoding="async" src="img/album-voan.jpg" alt="Chú rể hôn lên trán cô dâu qua tấm voan" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%"></button>
-<figcaption style="display: flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 500; letter-spacing: 0.24em"><span style="color: var(--rose)">04</span><span aria-hidden="true" style="flex-grow: 1; height: 1px; background: #1F221C; opacity: .25"></span><span style="color: #5B6052">04</span></figcaption>
-</figure>
+<div data-strip class="strip" style="position: relative; display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 24px; padding: 0 24px; scrollbar-width: none; -webkit-overflow-scrolling: touch">
+<button type="button" data-lb="0" aria-label="Xem ảnh lớn, ảnh 1 trên 4" style="flex: 0 0 78%; aspect-ratio: 4 / 5; padding: 0; border: 0; background: var(--tone); cursor: zoom-in; scroll-snap-align: center"><img loading="lazy" decoding="async" src="img/album-voan.jpg" alt="Chú rể hôn lên trán cô dâu qua tấm voan" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%"></button>
+<button type="button" data-lb="1" aria-label="Xem ảnh lớn, ảnh 2 trên 4" style="flex: 0 0 78%; aspect-ratio: 4 / 5; padding: 0; border: 0; background: var(--tone); cursor: zoom-in; scroll-snap-align: center"><img loading="lazy" decoding="async" src="img/album-bo-cau.jpg" alt="Chú rể hôn má cô dâu giữa đàn bồ câu bay" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 48% 50%"></button>
+<button type="button" data-lb="2" aria-label="Xem ảnh lớn, ảnh 3 trên 4" style="flex: 0 0 78%; aspect-ratio: 4 / 5; padding: 0; border: 0; background: var(--tone); cursor: zoom-in; scroll-snap-align: center"><img loading="lazy" decoding="async" src="img/album-cua.jpg" alt="Cô dâu chú rể tựa lan can, nhìn qua khung cửa gỗ" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 53% 50%"></button>
+<button type="button" data-lb="3" aria-label="Xem ảnh lớn, ảnh 4 trên 4" style="flex: 0 0 78%; aspect-ratio: 4 / 5; padding: 0; border: 0; background: var(--tone); cursor: zoom-in; scroll-snap-align: center"><img loading="lazy" decoding="async" src="img/album-vuon.jpg" alt="Cô dâu chú rể đứng hai bên đài phun nước giữa vườn hoa" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 61% 50%"></button>
+<div aria-hidden="true" style="flex: 0 0 12px"></div>
+</div>
+<div style="margin: 4px 24px 0; display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 500; letter-spacing: 0.24em">
+<span><span data-strip-now style="color: var(--rose)">01</span> / 04</span>
+<span aria-hidden="true" style="display: flex; gap: 6px"><i data-dot style="display: block; width: 18px; height: 2px; background: #1F221C; opacity: 1; transition: opacity .3s"></i><i data-dot style="display: block; width: 18px; height: 2px; background: #1F221C; opacity: 0.25; transition: opacity .3s"></i><i data-dot style="display: block; width: 18px; height: 2px; background: #1F221C; opacity: 0.25; transition: opacity .3s"></i><i data-dot style="display: block; width: 18px; height: 2px; background: #1F221C; opacity: 0.25; transition: opacity .3s"></i></span>
+<span style="color: #5B6052">VUỐT →</span>
+</div>
 </section>
 
 <section style="min-height: 760px; box-sizing: border-box; padding: 72px 24px; display: flex; flex-direction: column; justify-content: center; gap: 28px; border-top: 1px solid #1F221C">
@@ -271,7 +268,7 @@ main > section > *,main > img,main > footer > *{animation:rv-in linear both;anim
 </div>
 </div>
 </div>
-<script src="config.js?v=6"></script>
-<script src="app.js?v=6"></script>
+<script src="config.js?v=7"></script>
+<script src="app.js?v=7"></script>
 </body>
 </html>
