@@ -47,6 +47,14 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
 .card::before{content:"";position:absolute;inset:7px;border:1px solid rgba(110,125,70,.45)}
 .card > *{position:relative}
 .card > .fl{position:absolute}
+.ev{position:relative;width:100%;display:flex;justify-content:flex-start;padding-left:2%}
+.ev-c{width:72%;padding:20px 14px 18px;font-size:15px;line-height:1.5;background:#F7F4EC;box-shadow:0 12px 22px -12px rgba(20,26,8,.6),0 1px 0 rgba(255,255,255,.5) inset}
+.ev-c::before{inset:6px;border-color:rgba(110,125,70,.35)}
+.ev-c::after{content:"";position:absolute;inset:9px;border:1px solid rgba(110,125,70,.18);pointer-events:none}
+.ev-t{font-size:32px;color:var(--ol-d);margin-bottom:4px}
+.ev-s{font-size:13px;font-style:italic;opacity:.8}
+.ev-k{font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--ol)}
+.ev-p{margin-top:10px;min-height:28px;padding:0 16px;font-size:13px}
 .pill{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:0 20px;border:1px solid rgba(110,125,70,.6);border-radius:18px;background:none;color:var(--ol-d);text-decoration:none;font-size:15px;cursor:pointer}
 .oval{width:min(230px,64vw);aspect-ratio:3/4;border-radius:50%;padding:12px;background:#7A894F;box-shadow:inset 0 0 0 1px rgba(244,241,232,.35),0 0 0 10px var(--ol),0 0 0 11px rgba(244,241,232,.25)}
 .oval img{width:100%;height:100%;object-fit:cover;border-radius:50%;box-shadow:0 0 0 2px rgba(244,241,232,.5)}
@@ -123,20 +131,31 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
 <svg class="orn" viewBox="0 0 160 20" aria-hidden="true"><path d="M2 10h56M102 10h56M80 10c-8-8-18-8-22 0 4 8 14 8 22 0zm0 0c8-8 18-8 22 0-4 8-14 8-22 0z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="80" cy="10" r="2" fill="currentColor"/></svg>
 <p style="max-width: 300px; font-size: 17px">Trăm năm tình viên mãn,<br>bạc đầu nghĩa phu thê.</p>
 <p style="max-width: 300px; font-size: 17px">Hai gia đình chúng tôi trân trọng kính mời quý khách đến chung vui trong ngày thành hôn của hai con.</p>
-<div class="card" style="margin-top: 22px; width: 82%">
-<div class="sc" style="font-size: 36px; color: var(--ol-d)">Tiệc cưới</div>
-<div style="font-size: 16px">18:00 · Chủ Nhật, 06.12.2026</div>
-<div style="font-size: 14px; font-style: italic; opacity: .8"><span class="nw">Nhằm ngày 28 tháng 10</span> <span class="nw">năm Bính Ngọ</span></div>
-<div style="margin-top: 6px; font-size: 17px; font-weight: 700">Nhà hàng tiệc cưới Venus</div>
-<div style="font-size: 15px"><span class="nw">117-117A Lê Trọng Tấn,</span> <span class="nw">Tân Sơn Nhì, TP.HCM</span></div>
-<a class="pill" style="margin-top: 12px" href="https://www.google.com/maps/search/?api=1&amp;query=Nh%C3%A0%20h%C3%A0ng%20ti%E1%BB%87c%20c%C6%B0%E1%BB%9Bi%20Venus&amp;query_place_id=ChIJZ8uWmeIrdTERC9eZu57p86w" target="_blank" rel="noopener">Xem bản đồ</a>
-<img class="fl" src="img/hong-mon-doi.webp" alt="" aria-hidden="true" loading="lazy" style="width:38%;right:-18%;bottom:-16%;transform:rotate(-8deg)">
+<div class="ev" style="margin-top: 26px">
+<div class="card ev-c">
+<div class="sc ev-t">Tiệc cưới</div>
+<div>Thời gian: 18:00</div>
+<div>Chủ Nhật, 06.12.2026</div>
+<div class="ev-s"><span class="nw">Nhằm ngày 28 tháng 10</span> <span class="nw">năm Bính Ngọ</span></div>
 </div>
-<div class="card" style="margin-top: 18px; width: 82%">
-<div class="sc" style="font-size: 36px; color: var(--ol-d)">Hai gia đình</div>
-<div style="display: flex; flex-direction: column; gap: 10px; font-size: 16px">
-<div><div style="font-size: 12px; font-weight: 700; letter-spacing: .2em; color: var(--ol)">NHÀ TRAI</div><span class="nw">Ông Lê Hồng Luật</span><br><span class="nw">Bà Tạ Thị Ban</span></div>
-<div><div style="font-size: 12px; font-weight: 700; letter-spacing: .2em; color: var(--ol)">NHÀ GÁI</div><span class="nw">Ông Trương Văn Khoa</span><br><span class="nw">Bà Chiêm Thị Kim Tuyến</span></div>
+<img class="fl" src="img/hong-mon-doi.webp" alt="" aria-hidden="true" loading="lazy" style="width:min(26vw,112px);right:2%;top:-14%;transform:rotate(6deg)">
+</div>
+<div class="ev" style="margin-top: 22px">
+<div class="card ev-c">
+<div class="sc ev-t">Địa điểm</div>
+<div style="font-weight: 700">Nhà hàng tiệc cưới Venus</div>
+<div><span class="nw">117-117A Lê Trọng Tấn,</span><br><span class="nw">Tân Sơn Nhì, TP. Hồ Chí Minh</span></div>
+<a class="pill ev-p" href="https://www.google.com/maps/search/?api=1&amp;query=Nh%C3%A0%20h%C3%A0ng%20ti%E1%BB%87c%20c%C6%B0%E1%BB%9Bi%20Venus&amp;query_place_id=ChIJZ8uWmeIrdTERC9eZu57p86w" target="_blank" rel="noopener">Xem bản đồ</a>
+</div>
+<img class="fl" src="img/hong-mon-doi-m.webp" alt="" aria-hidden="true" loading="lazy" style="width:min(28vw,120px);right:-1%;bottom:-22%;transform:rotate(-8deg)">
+</div>
+<div class="ev" style="margin-top: 22px">
+<div class="card ev-c">
+<div class="sc ev-t">Hai gia đình</div>
+<div class="ev-k">NHÀ TRAI</div>
+<div><span class="nw">Ông Lê Hồng Luật</span><br><span class="nw">Bà Tạ Thị Ban</span></div>
+<div class="ev-k" style="margin-top: 6px">NHÀ GÁI</div>
+<div><span class="nw">Ông Trương Văn Khoa</span><br><span class="nw">Bà Chiêm Thị Kim Tuyến</span></div>
 </div>
 </div>
 </section>
