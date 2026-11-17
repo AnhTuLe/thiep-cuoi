@@ -13,7 +13,7 @@
 <meta property="og:image" content="https://tuanh-kimchau.vercel.app/img/p06.jpg">
 <meta property="og:url" content="https://tuanh-kimchau.vercel.app/">
 <meta name="theme-color" content="#858A77">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Great+Vibes&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=Great+Vibes&amp;display=swap">
 <style>
 :root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 img{max-width:100%}
@@ -42,7 +42,7 @@ button:disabled{opacity:.6;cursor:default}
 .qrbox:has(#qt-groom:checked) [data-side="bride"],.qrbox:has(#qt-bride:checked) [data-side="groom"]{display:none!important}
 /* Chữ chỉn chu: tiêu đề chia dòng cân, đoạn văn không để một chữ mồ côi, tên không bị bẻ dòng. */
 [style*="font-style: italic"]{text-wrap:balance}
-[style*="Great Vibes"]{font-weight:400!important;font-style:normal!important}
+[style*="Great Vibes"]{font-weight:400!important;font-style:normal!important;-webkit-text-stroke:.5px currentColor}
 p{text-wrap:pretty}
 .nw{white-space:nowrap}
 .hdr > *{white-space:nowrap}
@@ -50,11 +50,11 @@ p{text-wrap:pretty}
 .names-xl{font-size:min(70px,calc((100vw - 48px) / 5))!important;line-height:1.12!important;letter-spacing:0!important}
 .names-xl > div{white-space:nowrap}
 /* Layout: một cột thiệp rộng tối đa 480px, canh giữa; ảnh tràn mép, chữ giữ lề. */
-:root{--bg:#F4F3EE;--fg:#1F221C;--muted:#5B6052;--accent:#4A5040;--rose:#B4476A;--tone:#858A77;--display:'Cormorant Garamond',Georgia,serif;--script:'Great Vibes',cursive;--body:'Cormorant Garamond',Georgia,serif}
+:root{--bg:#F4F3EE;--fg:#1F221C;--muted:#474C3F;--accent:#4A5040;--rose:#B4476A;--tone:#858A77;--display:'Cormorant Garamond',Georgia,serif;--script:'Great Vibes',cursive;--body:'Cormorant Garamond',Georgia,serif}
 body{margin:0;background:var(--bg);color:var(--fg)}
 a:hover{opacity:.7}
 a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible{outline:2px solid #1F221C;outline-offset:3px}
-::placeholder{color:#5B6052}
+::placeholder{color:#474C3F}
 option{color:#1b1b1b;background:#ffffff}
 @property --n{syntax:'<integer>';inherits:false;initial-value:6}
 .cnt{--n:6;counter-reset:n var(--n)}
@@ -74,23 +74,23 @@ main > section > *,main > img,main > footer > *{animation:rv-in linear both;anim
 </style>
 </head>
 <body data-template="editorial">
-<div id="card" class="pre" style="background: #F4F3EE; color: #1F221C; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 18px; line-height: 1.6; font-variant-numeric: lining-nums">
+<div id="card" class="pre" style="background: #F4F3EE; color: #1F221C; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 18px; line-height: 1.6; font-variant-numeric: lining-nums">
 <div id="intro-wrap" style="display: contents">
 <div id="intro" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 40; box-sizing: border-box; padding: 20px 24px 32px; background: #2A2D24; color: #F4F3EE; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; transform: translateY(0); transition: transform 0.9s cubic-bezier(0.7, 0, 0.2, 1)">
 <div class="intro-bg" aria-hidden="true"><img src="img/intro.jpg" alt="" fetchpriority="high"></div>
-<div class="hdr" style="padding-bottom: 14px; border-bottom: 1px solid rgba(244,243,238,.7); display: flex; justify-content: space-between; gap: 12px; font-size: 13px; font-weight: 600; letter-spacing: 0.24em; line-height: 20px">
+<div class="hdr" style="padding-bottom: 14px; border-bottom: 1px solid rgba(244,243,238,.7); display: flex; justify-content: space-between; gap: 12px; font-size: 13px; font-weight: 700; letter-spacing: 0.24em; line-height: 20px">
 <span>THIỆP CƯỚI</span>
 <span>06 . 12 . 2026</span>
 </div>
 <div style="margin-top: auto; display: flex; flex-direction: column; gap: 22px">
-<div class="intro-names names-xl" style="font-family: 'Great Vibes', cursive; font-weight: 500; font-size: 58px; text-shadow: 0 2px 24px rgba(0,0,0,.35); line-height: 1.08; letter-spacing: -0.01em; color: #FFFFFF">
+<div class="intro-names names-xl" style="font-family: 'Great Vibes', cursive; font-weight: 600; font-size: 58px; text-shadow: 0 2px 24px rgba(0,0,0,.35); line-height: 1.08; letter-spacing: -0.01em; color: #FFFFFF">
 <div>Tú Anh</div>
-<div><span style="font-style: italic; font-weight: 400">&amp;</span> Kim Châu</div>
+<div><span style="font-style: italic; font-weight: 600">&amp;</span> Kim Châu</div>
 </div>
 <div class="if-guest" style="display: contents" hidden>
 <div style="padding-top: 16px; border-top: 1px solid rgba(244,243,238,.7); display: flex; flex-direction: column; gap: 4px">
-<div style="font-size: 13px; font-weight: 600; letter-spacing: 0.2em">KÍNH MỜI</div>
-<div style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 500; font-size: 26px; line-height: 1.4"><span data-guest></span></div>
+<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.2em">KÍNH MỜI</div>
+<div style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; font-size: 26px; line-height: 1.4"><span data-guest></span></div>
 </div>
 </div>
 </div>
@@ -100,14 +100,14 @@ main > section > *,main > img,main > footer > *{animation:rv-in linear both;anim
 <main style="max-width: 480px; margin: 0 auto">
 
 <header style="box-sizing: border-box; padding: 20px 0 36px; display: flex; flex-direction: column; gap: 18px">
-<div class="hdr" style="margin: 0 24px; padding-bottom: 14px; border-bottom: 1px solid #1F221C; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 13px; font-weight: 600; letter-spacing: 0.24em; line-height: 20px">
+<div class="hdr" style="margin: 0 24px; padding-bottom: 14px; border-bottom: 1px solid #1F221C; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 13px; font-weight: 700; letter-spacing: 0.24em; line-height: 20px">
 <span>THIỆP CƯỚI</span>
 <span aria-hidden="true" style="font-family: 'Great Vibes', cursive; font-size: 22px; line-height: 20px; color: var(--rose); letter-spacing: 0">A &amp; C</span>
 <span>06 . 12 . 2026</span>
 </div>
 <div style="display: flex">
 <div style="width: 64px; flex-shrink: 0; display: flex; align-items: center; justify-content: center">
-<div style="writing-mode: vertical-rl; transform: rotate(180deg); font-size: 13px; font-weight: 600; letter-spacing: 0.3em; color: #5B6052">CHỦ NHẬT · 18:00 · TP. HỒ CHÍ MINH</div>
+<div style="writing-mode: vertical-rl; transform: rotate(180deg); font-size: 13px; font-weight: 700; letter-spacing: 0.3em; color: #474C3F">CHỦ NHẬT · 18:00 · TP. HỒ CHÍ MINH</div>
 </div>
 <div style="position: relative; overflow: hidden; flex-grow: 1; aspect-ratio: 4 / 5; max-height: 62vh; background: var(--tone)">
 <img class="kb" src="img/cover.jpg" alt="Cô dâu chú rể nắm tay, cùng ngước nhìn lên" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%">
@@ -115,35 +115,35 @@ main > section > *,main > img,main > footer > *{animation:rv-in linear both;anim
 </div>
 <div class="if-guest" style="display: contents" hidden>
 <div style="padding: 0 24px; display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px">
-<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.2em; color: #5B6052">KÍNH MỜI</span>
-<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 500; font-size: 22px; line-height: 1.4"><span data-guest></span></span>
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 0.2em; color: #474C3F">KÍNH MỜI</span>
+<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; font-size: 22px; line-height: 1.4"><span data-guest></span></span>
 </div>
 </div>
-<div class="names-xl" style="padding: 0 24px; font-family: 'Great Vibes', cursive; font-weight: 500; font-size: 58px; line-height: 1.08; letter-spacing: -0.01em">
+<div class="names-xl" style="padding: 0 24px; font-family: 'Great Vibes', cursive; font-weight: 600; font-size: 58px; line-height: 1.08; letter-spacing: -0.01em">
 <div>Tú Anh</div>
-<div><span style="font-style: italic; font-weight: 400; color: var(--rose)">&amp;</span> Kim Châu</div>
+<div><span style="font-style: italic; font-weight: 600; color: var(--rose)">&amp;</span> Kim Châu</div>
 </div>
 </header>
 
 <div aria-hidden="true" style="overflow: hidden; border-top: 1px solid #1F221C; border-bottom: 1px solid #1F221C; padding: 14px 0">
-<div class="mq" style="display: flex; width: max-content; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 500; font-size: 26px; line-height: 1.4; white-space: nowrap">
+<div class="mq" style="display: flex; width: max-content; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; font-size: 26px; line-height: 1.4; white-space: nowrap">
 <span style="padding-right: 28px">Tú Anh <span style="color: var(--rose)">&amp;</span> Kim Châu — 06 . 12 . 2026 — Tú Anh <span style="color: var(--rose)">&amp;</span> Kim Châu — 06 . 12 . 2026 —</span>
 <span style="padding-right: 28px">Tú Anh <span style="color: var(--rose)">&amp;</span> Kim Châu — 06 . 12 . 2026 — Tú Anh <span style="color: var(--rose)">&amp;</span> Kim Châu — 06 . 12 . 2026 —</span>
 </div>
 </div>
 
 <section style="box-sizing: border-box; padding: 52px 24px; display: flex; flex-direction: column; gap: 22px">
-<div style="font-size: 13px; font-weight: 600; letter-spacing: 0.24em"><span style="color: var(--rose)">01</span> — LỜI MỜI</div>
-<p style="margin: 0; max-width: 320px; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 500; font-size: min(32px, calc((100vw - 48px) / 9.4)); line-height: 1.25"><span class="nw">Trăm năm tình viên mãn,</span><br><span class="nw">bạc đầu nghĩa phu thê.</span></p>
+<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.24em"><span style="color: var(--rose)">01</span> — LỜI MỜI</div>
+<p style="margin: 0; max-width: 320px; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; font-size: min(32px, calc((100vw - 48px) / 9.4)); line-height: 1.25"><span class="nw">Trăm năm tình viên mãn,</span><br><span class="nw">bạc đầu nghĩa phu thê.</span></p>
 <p style="margin: 0; max-width: 320px; line-height: 1.75">Hai gia đình chúng tôi trân trọng kính mời quý khách đến chung vui trong ngày thành hôn của hai con.</p>
 <div style="margin-top: 4px; padding-top: 20px; border-top: 1px solid #1F221C; display: grid; grid-template-columns: auto 1px auto; justify-content: space-between; gap: 0 10px">
 <div style="display: flex; flex-direction: column; gap: 6px">
-<div style="font-size: 13px; font-weight: 600; letter-spacing: 0.2em; color: #5B6052">NHÀ TRAI</div>
+<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.2em; color: #474C3F">NHÀ TRAI</div>
 <div style="font-size: min(20px, calc((100vw - 69px) / 17.4)); line-height: 1.5"><span class="nw">Ông Lê Hồng Luật</span><br><span class="nw">Bà Tạ Thị Ban</span></div>
 </div>
 <div aria-hidden="true" style="background: #1F221C; opacity: .2"></div>
 <div style="display: flex; flex-direction: column; gap: 6px; text-align: right">
-<div style="font-size: 13px; font-weight: 600; letter-spacing: 0.2em; color: #5B6052; margin-right: -0.2em">NHÀ GÁI</div>
+<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.2em; color: #474C3F; margin-right: -0.2em">NHÀ GÁI</div>
 <div style="font-size: min(20px, calc((100vw - 69px) / 17.4)); line-height: 1.5"><span class="nw">Ông Trương Văn Khoa</span><br><span class="nw">Bà Chiêm Thị Kim Tuyến</span></div>
 </div>
 </div>
@@ -152,21 +152,21 @@ main > section > *,main > img,main > footer > *{animation:rv-in linear both;anim
 <img src="img/p04.jpg" alt="Chú rể hôn tay cô dâu trên đồi sương, khăn voan bay trong gió" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover">
 
 <section style="box-sizing: border-box; padding: 52px 24px; background: var(--tone); color: #1C1F18; display: flex; flex-direction: column; gap: 20px">
-<div style="font-size: 13px; font-weight: 600; letter-spacing: 0.24em">02 — NGÀY CƯỚI</div>
+<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.24em">02 — NGÀY CƯỚI</div>
 <div style="display: flex; align-items: flex-end; gap: 16px">
-<div class="cnt" role="img" aria-label="06" style="min-width: 1.1em; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: min(152px, 36vw); line-height: 0.82; letter-spacing: -0.02em; color: #FFFFFF"></div>
-<div style="padding-bottom: 4px; font-size: 17px; font-weight: 500; line-height: 1.7; white-space: nowrap">THÁNG 12<br>NĂM 2026<br>CHỦ NHẬT · 18:00</div>
+<div class="cnt" role="img" aria-label="06" style="min-width: 1.1em; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: min(152px, 36vw); line-height: 0.82; letter-spacing: -0.02em; color: #FFFFFF"></div>
+<div style="padding-bottom: 4px; font-size: 17px; font-weight: 600; line-height: 1.7; white-space: nowrap">THÁNG 12<br>NĂM 2026<br>CHỦ NHẬT · 18:00</div>
 </div>
 <div style="font-size: 17px">Nhằm ngày 28 tháng 10 năm Bính Ngọ</div>
 <div style="padding-top: 24px; border-top: 1px solid #1C1F18; display: flex; flex-direction: column; gap: 8px">
-<div class="nw" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: min(30px, calc((100vw - 48px) / 10.1)); line-height: 1.25; color: #FFFFFF">Nhà hàng tiệc cưới Venus</div>
+<div class="nw" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: min(30px, calc((100vw - 48px) / 10.1)); line-height: 1.25; color: #FFFFFF">Nhà hàng tiệc cưới Venus</div>
 <div><span class="nw">117-117A Lê Trọng Tấn,</span> <span class="nw">Tân Sơn Nhì,</span> <span class="nw">TP. Hồ Chí Minh</span></div>
 </div>
 <a href="https://www.google.com/maps/search/?api=1&amp;query=10.8058075%2C106.6286565&amp;query_place_id=ChIJZ8uWmeIrdTERC9eZu57p86w" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; color: #1C1F18; font-size: 17px; font-weight: 600; letter-spacing: 0.12em">XEM BẢN ĐỒ →</a>
 </section>
 
 <section style="box-sizing: border-box; padding: 52px 0; display: flex; flex-direction: column; gap: 18px">
-<div style="margin: 0 24px; font-size: 13px; font-weight: 600; letter-spacing: 0.24em"><span style="color: var(--rose)">03</span> — ALBUM</div>
+<div style="margin: 0 24px; font-size: 13px; font-weight: 700; letter-spacing: 0.24em"><span style="color: var(--rose)">03</span> — ALBUM</div>
 <div style="display: flex; flex-direction: column; gap: 6px">
 <button type="button" data-lb="0" aria-label="Xem ảnh lớn, ảnh 1 trên 4" style="display: block; width: 100%; padding: 0; border: 0; background: var(--tone); cursor: zoom-in"><img loading="lazy" decoding="async" src="img/album-cua.jpg" alt="Cô dâu chú rể tựa lan can, nhìn qua khung cửa gỗ" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 50%"></button>
 <button type="button" data-lb="1" aria-label="Xem ảnh lớn, ảnh 2 trên 4" style="display: block; width: 100%; padding: 0; border: 0; background: var(--tone); cursor: zoom-in"><img loading="lazy" decoding="async" src="img/album-vuon.jpg" alt="Cô dâu chú rể đứng hai bên đài phun nước giữa vườn hoa" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 50%"></button>
@@ -176,24 +176,24 @@ main > section > *,main > img,main > footer > *{animation:rv-in linear both;anim
 </section>
 
 <section style="box-sizing: border-box; padding: 52px 24px; display: flex; flex-direction: column; gap: 22px; border-top: 1px solid #1F221C">
-<div style="font-size: 13px; font-weight: 600; letter-spacing: 0.24em"><span style="color: var(--rose)">04</span> — XÁC NHẬN THAM DỰ</div>
-<p style="margin: 0; max-width: 320px; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 500; font-size: 32px; line-height: 1.2">Bạn sẽ đến chung vui chứ?</p>
+<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.24em"><span style="color: var(--rose)">04</span> — XÁC NHẬN THAM DỰ</div>
+<p style="margin: 0; max-width: 320px; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; font-size: 32px; line-height: 1.2">Bạn sẽ đến chung vui chứ?</p>
 <p data-needs="rsvpDeadline" style="margin: 0; max-width: 320px; line-height: 1.75">Bạn vui lòng phản hồi trước ngày <span data-cfg="rsvpDeadline"></span> để chúng tôi đón tiếp chu đáo.</p>
 <form id="rsvp" novalidate style="display: flex; flex-direction: column; gap: 18px">
 <div style="display: flex; flex-direction: column; gap: 4px">
-<label for="m2-name" style="font-size: 13px; font-weight: 600; letter-spacing: 0.2em; color: #5B6052">HỌ VÀ TÊN</label>
-<input id="m2-name" name="fullname" type="text" maxlength="80" autocomplete="name" placeholder="Tên của bạn" style="width: 100%; box-sizing: border-box; height: 44px; padding: 0; border: 0; border-bottom: 1px solid #1F221C; border-radius: 0; background: transparent; color: #1F221C; font: inherit; font-weight: 500">
+<label for="m2-name" style="font-size: 13px; font-weight: 700; letter-spacing: 0.2em; color: #474C3F">HỌ VÀ TÊN</label>
+<input id="m2-name" name="fullname" type="text" maxlength="80" autocomplete="name" placeholder="Tên của bạn" style="width: 100%; box-sizing: border-box; height: 44px; padding: 0; border: 0; border-bottom: 1px solid #1F221C; border-radius: 0; background: transparent; color: #1F221C; font: inherit; font-weight: 600">
 </div>
 <fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 8px">
-<legend style="padding: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.2em; color: #5B6052">CÂU TRẢ LỜI</legend>
+<legend style="padding: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.2em; color: #474C3F">CÂU TRẢ LỜI</legend>
 <div class="seg">
 <label for="m2-yes"><input id="m2-yes" type="radio" name="attend" value="Có">Tôi sẽ đến</label>
 <label for="m2-no"><input id="m2-no" type="radio" name="attend" value="Không">Không đến được</label>
 </div>
 </fieldset>
 <div style="display: flex; flex-direction: column; gap: 4px">
-<label for="m2-guests" style="font-size: 13px; font-weight: 600; letter-spacing: 0.2em; color: #5B6052">SỐ NGƯỜI THAM DỰ</label>
-<select id="m2-guests" name="guests" style="width: 100%; box-sizing: border-box; height: 44px; padding: 0; border: 0; border-bottom: 1px solid #1F221C; border-radius: 0; background: transparent; color: #1F221C; font: inherit; font-weight: 500">
+<label for="m2-guests" style="font-size: 13px; font-weight: 700; letter-spacing: 0.2em; color: #474C3F">SỐ NGƯỜI THAM DỰ</label>
+<select id="m2-guests" name="guests" style="width: 100%; box-sizing: border-box; height: 44px; padding: 0; border: 0; border-bottom: 1px solid #1F221C; border-radius: 0; background: transparent; color: #1F221C; font: inherit; font-weight: 600">
 <option value="1">1 người</option>
 <option value="2">2 người</option>
 <option value="3">3 người</option>
@@ -201,7 +201,7 @@ main > section > *,main > img,main > footer > *{animation:rv-in linear both;anim
 </select>
 </div>
 <div style="display: flex; flex-direction: column; gap: 4px">
-<label for="m2-wish" style="font-size: 13px; font-weight: 600; letter-spacing: 0.2em; color: #5B6052">LỜI NHẮN</label>
+<label for="m2-wish" style="font-size: 13px; font-weight: 700; letter-spacing: 0.2em; color: #474C3F">LỜI NHẮN</label>
 <textarea id="m2-wish" name="message" maxlength="1000" rows="2" placeholder="Đôi lời gửi cô dâu chú rể" style="width: 100%; box-sizing: border-box; height: 64px; padding: 10px 0; border: 0; border-bottom: 1px solid #1F221C; border-radius: 0; background: transparent; color: #1F221C; font: inherit; resize: vertical"></textarea>
 </div>
 <button type="submit" style="margin-top: 8px; min-height: 52px; border: 0; border-radius: 0; background: #1F221C; color: #F4F3EE; font: inherit; font-size: 15px; font-weight: 600; letter-spacing: 0.2em; cursor: pointer">GỬI XÁC NHẬN →</button>
@@ -209,8 +209,8 @@ main > section > *,main > img,main > footer > *{animation:rv-in linear both;anim
 </section>
 
 <section style="box-sizing: border-box; padding: 52px 24px; display: flex; flex-direction: column; gap: 22px; border-top: 1px solid #1F221C">
-<div style="font-size: 13px; font-weight: 600; letter-spacing: 0.24em"><span style="color: var(--rose)">05</span> — MỪNG CƯỚI</div>
-<p style="margin: 0; max-width: 320px; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 500; font-size: 32px; line-height: 1.2">Sự hiện diện của bạn là món quà quý nhất.</p>
+<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.24em"><span style="color: var(--rose)">05</span> — MỪNG CƯỚI</div>
+<p style="margin: 0; max-width: 320px; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; font-size: 32px; line-height: 1.2">Sự hiện diện của bạn là món quà quý nhất.</p>
 <p style="margin: 0; max-width: 320px; line-height: 1.75">Nếu muốn gửi quà mừng, bạn chọn chú rể hoặc cô dâu rồi quét mã bên dưới.</p>
 <div class="qrbox" style="display: flex; flex-direction: column; gap: 16px; width: 100%">
 <div class="seg" role="radiogroup" aria-label="Chọn mã QR">
@@ -218,21 +218,21 @@ main > section > *,main > img,main > footer > *{animation:rv-in linear both;anim
 <label for="qt-bride"><input id="qt-bride" type="radio" name="qrtab">Cô dâu</label>
 </div>
 <div data-side="groom" style="display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 16px; align-items: start">
-<div style="width: 128px; aspect-ratio: 1; overflow: hidden; box-sizing: border-box; background: #FFFFFF; border: 1px solid #1F221C; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2px; font-size: 13px; color: #5B6052"><span data-qr="groomQr">[Mã QR]</span></div>
+<div style="width: 128px; aspect-ratio: 1; overflow: hidden; box-sizing: border-box; background: #FFFFFF; border: 1px solid #1F221C; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2px; font-size: 13px; color: #474C3F"><span data-qr="groomQr">[Mã QR]</span></div>
 <div style="min-width: 0; display: flex; flex-direction: column; gap: 6px">
-<div style="font-size: 13px; font-weight: 600; letter-spacing: 0.2em; color: #5B6052">CHÚ RỂ</div>
-<div class="nw" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 23px; line-height: 1.25">Tú Anh</div>
+<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.2em; color: #474C3F">CHÚ RỂ</div>
+<div class="nw" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 23px; line-height: 1.25">Tú Anh</div>
 <div style="font-size: 15px; line-height: 1.6"><span data-cfg="groomBank">[Ngân hàng]</span><br><span data-cfg="groomAccount" style="font-weight: 600; font-size: 17px; letter-spacing: 0.02em">[Số tài khoản]</span><br><span data-cfg="groomHolder" style="display: block; font-size: 13px; text-wrap: balance">[Chủ tài khoản]</span></div>
-<button type="button" data-copy="groomAccount" data-needs="groomAccount" class="nw" style="align-self: flex-start; min-height: 40px; padding: 0; border: 0; border-radius: 0; background: none; color: #1F221C; text-decoration: underline; text-underline-offset: 6px; font: inherit; font-size: 13px; font-weight: 600; letter-spacing: 0.16em; cursor: pointer">SAO CHÉP SỐ TK</button>
+<button type="button" data-copy="groomAccount" data-needs="groomAccount" class="nw" style="align-self: flex-start; min-height: 40px; padding: 0; border: 0; border-radius: 0; background: none; color: #1F221C; text-decoration: underline; text-underline-offset: 6px; font: inherit; font-size: 13px; font-weight: 700; letter-spacing: 0.16em; cursor: pointer">SAO CHÉP SỐ TK</button>
 </div>
 </div>
 <div data-side="bride" style="display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 16px; align-items: start">
-<div style="width: 128px; aspect-ratio: 1; overflow: hidden; box-sizing: border-box; background: #FFFFFF; border: 1px solid #1F221C; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2px; font-size: 13px; color: #5B6052"><span data-qr="brideQr">[Mã QR]</span></div>
+<div style="width: 128px; aspect-ratio: 1; overflow: hidden; box-sizing: border-box; background: #FFFFFF; border: 1px solid #1F221C; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2px; font-size: 13px; color: #474C3F"><span data-qr="brideQr">[Mã QR]</span></div>
 <div style="min-width: 0; display: flex; flex-direction: column; gap: 6px">
-<div style="font-size: 13px; font-weight: 600; letter-spacing: 0.2em; color: #5B6052">CÔ DÂU</div>
-<div class="nw" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 23px; line-height: 1.25">Kim Châu</div>
+<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.2em; color: #474C3F">CÔ DÂU</div>
+<div class="nw" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 23px; line-height: 1.25">Kim Châu</div>
 <div style="font-size: 15px; line-height: 1.6"><span data-cfg="brideBank">[Ngân hàng]</span><br><span data-cfg="brideAccount" style="font-weight: 600; font-size: 17px; letter-spacing: 0.02em">[Số tài khoản]</span><br><span data-cfg="brideHolder" style="display: block; font-size: 13px; text-wrap: balance">[Chủ tài khoản]</span></div>
-<button type="button" data-copy="brideAccount" data-needs="brideAccount" class="nw" style="align-self: flex-start; min-height: 40px; padding: 0; border: 0; border-radius: 0; background: none; color: #1F221C; text-decoration: underline; text-underline-offset: 6px; font: inherit; font-size: 13px; font-weight: 600; letter-spacing: 0.16em; cursor: pointer">SAO CHÉP SỐ TK</button>
+<button type="button" data-copy="brideAccount" data-needs="brideAccount" class="nw" style="align-self: flex-start; min-height: 40px; padding: 0; border: 0; border-radius: 0; background: none; color: #1F221C; text-decoration: underline; text-underline-offset: 6px; font: inherit; font-size: 13px; font-weight: 700; letter-spacing: 0.16em; cursor: pointer">SAO CHÉP SỐ TK</button>
 </div>
 </div>
 </div>
@@ -240,7 +240,7 @@ main > section > *,main > img,main > footer > *{animation:rv-in linear both;anim
 
 <footer style="box-sizing: border-box; padding: 36px 24px 44px; border-top: 1px solid #1F221C; display: flex; flex-direction: column; gap: 12px">
 <div aria-hidden="true" style="font-family: 'Great Vibes', cursive; font-size: 56px; line-height: 1.2">A <span style="color: var(--rose)">&amp;</span> C</div>
-<div style="font-size: 13px; font-weight: 600; letter-spacing: 0.24em; line-height: 2"><span class="nw">TÚ ANH &amp; KIM CHÂU</span><br><span class="nw">06 . 12 . 2026</span></div>
+<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.24em; line-height: 2"><span class="nw">TÚ ANH &amp; KIM CHÂU</span><br><span class="nw">06 . 12 . 2026</span></div>
 </footer>
 
 </main>
@@ -262,7 +262,7 @@ main > section > *,main > img,main > footer > *{animation:rv-in linear both;anim
 </div>
 </div>
 </div>
-<script src="config.js?v=13"></script>
-<script src="app.js?v=13"></script>
+<script src="config.js?v=14"></script>
+<script src="app.js?v=14"></script>
 </body>
 </html>
