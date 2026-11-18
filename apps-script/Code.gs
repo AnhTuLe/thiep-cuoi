@@ -25,12 +25,38 @@ function doPost(e) {
       clean(p.invited, 60),
       clean(p.template, 20)
     ]);
+    notify(p, ss);
     return json({ ok: true });
   } catch (err) {
     return json({ ok: false, error: String(err) });
   } finally {
     lock.releaseLock();
   }
+}
+
+// Gửi email báo cho chủ Sheet mỗi khi có khách trả lời.
+function notify(p, ss) {
+  try {
+    var to = Session.getEffectiveUser().getEmail();
+    var name = clean(p.fullname, 80) || '(không tên)';
+    var yes = p.attend === 'Có';
+    var subject = (yes ? '💌 ' : '✉️ ') + name + (yes ? ' sẽ đến dự (' + clean(p.guests, 10) + ' người)' : ' không đến được');
+    var body = [
+      'Họ và tên: ' + name,
+      'Tham dự: ' + clean(p.attend, 10),
+      'Số người: ' + clean(p.guests, 10),
+      'Lời nhắn: ' + (clean(p.message, 1000) || '—'),
+      'Tên trên link mời: ' + (clean(p.invited, 60) || '—'),
+      '',
+      'Xem tất cả phản hồi: ' + ss.getUrl()
+    ].join('\n');
+    MailApp.sendEmail(to, subject, body, { name: 'Thiệp cưới Tú Anh & Kim Châu' });
+  } catch (err) {}
+}
+
+// Chạy hàm này một lần trong trình soạn thảo để cấp quyền gửi email.
+function testEmail() {
+  notify({ fullname: 'Thử thông báo', attend: 'Có', guests: '1', message: 'Email thử từ thiệp cưới' }, SpreadsheetApp.getActiveSpreadsheet());
 }
 
 // Mở link Web App trên trình duyệt để kiểm tra script đang chạy.
