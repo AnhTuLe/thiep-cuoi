@@ -5,7 +5,7 @@
 window.WEDDING = {
   // Link Web App của Google Apps Script (dạng https://script.google.com/macros/s/.../exec).
   // Xem hướng dẫn trong README.md. Để trống thì form báo "chưa nối Google Sheet".
-  sheetUrl: "",
+  sheetUrl: "https://script.google.com/macros/s/AKfycbxe0tVDOx-B5RrByZHYi4JkLSp45aJsfiv7VGeGZzqyArlKolVrG5ztA1ASkpFJurvoiw/exec",
 
   // Hạn khách phản hồi, ví dụ "25.11.2026". Để trống thì câu nhắc hạn tự ẩn.
   rsvpDeadline: "",
