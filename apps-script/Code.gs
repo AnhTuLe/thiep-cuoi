@@ -51,11 +51,14 @@ function notify(p, ss) {
       'Xem tất cả phản hồi: ' + ss.getUrl()
     ].join('\n');
     MailApp.sendEmail(to, subject, body, { name: 'Thiệp cưới Tú Anh & Kim Châu' });
-  } catch (err) {}
+  } catch (err) {
+    console.error('Không gửi được email thông báo: ' + err);
+  }
 }
 
 // Chạy hàm này một lần trong trình soạn thảo để cấp quyền gửi email.
 function testEmail() {
+  ScriptApp.requireAllScopes(ScriptApp.AuthMode.FULL);
   notify({ fullname: 'Thử thông báo', attend: 'Có', guests: '1', message: 'Email thử từ thiệp cưới' }, SpreadsheetApp.getActiveSpreadsheet());
 }
 
