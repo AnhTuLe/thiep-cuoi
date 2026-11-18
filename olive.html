@@ -124,6 +124,11 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
 #intro.opening .pb .dau,#intro.opening .pb .no{opacity:0}
 @keyframes bob2{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.06)}}
 @media (prefers-reduced-motion:no-preference){#intro .pb .dau{animation:bob2 2.4s ease-in-out infinite}}
+#music{position:fixed;z-index:30;top:14px;right:max(14px,calc(50% - 201px));width:44px;height:44px;border:0;border-radius:12px;background:var(--ol);color:#F4F1E8;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 14px -6px rgba(30,36,14,.6)}
+#music svg{width:22px;height:22px;fill:currentColor}
+#music[aria-pressed="false"]::after{content:"";position:absolute;width:28px;height:2px;background:#F4F1E8;transform:rotate(-45deg);border-radius:1px}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:no-preference){#music[aria-pressed="true"] svg{animation:spin 6s linear infinite}}
 @keyframes rv{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:no-preference){@supports (animation-timeline:view()){section > *:not(.fl){animation:rv linear both;animation-timeline:view();animation-range:entry 0% entry 35%}}}
 </style>
@@ -138,6 +143,8 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
 </button>
 <div style="font-size: 17px; color: var(--ol-d)">Chạm vào con dấu để mở thiệp</div>
 </div>
+<button type="button" id="music" aria-label="Bật/tắt nhạc" aria-pressed="false" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18.5A2.5 2.5 0 1 1 6.5 16c.5 0 1 .1 1.5.4V5l11-2v12.5a2.5 2.5 0 1 1-2.5-2.5c.5 0 1 .1 1.5.4V7.3l-9 1.6v9.6z"/></svg></button>
+<audio id="bgm" src="img/nhac-nen.mp3" loop preload="none"></audio>
 <main>
 
 <section style="padding-top: 200px; padding-bottom: 30px">
@@ -193,7 +200,7 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
 <div class="alb" style="width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px">
 <button type="button" data-lb="0" aria-label="Xem ảnh lớn" style="grid-column: 1 / -1; padding: 0; border: 0; background: #ddd; cursor: zoom-in"><img loading="lazy" src="img/album-cua.jpg" alt="Cô dâu chú rể tựa lan can, nhìn qua khung cửa gỗ" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover"></button>
 <button type="button" data-lb="1" aria-label="Xem ảnh lớn" style="padding: 0; border: 0; background: #ddd; cursor: zoom-in"><img loading="lazy" src="img/cover.jpg" alt="Cô dâu chú rể nắm tay, cùng ngước nhìn lên" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover"></button>
-<button type="button" data-lb="2" aria-label="Xem ảnh lớn" style="padding: 0; border: 0; background: #ddd; cursor: zoom-in"><img loading="lazy" src="img/album-cau-thang.jpg" alt="Chú rể nắm tay dắt cô dâu bước xuống cầu thang thảm đỏ" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 40%"></button>
+<button type="button" data-lb="2" aria-label="Xem ảnh lớn" style="padding: 0; border: 0; background: #ddd; cursor: zoom-in"><img loading="lazy" src="img/album-voan-cua-so.jpg" alt="Chú rể hôn lên trán cô dâu qua tấm voan bên khung cửa sổ" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%"></button>
 </div>
 
 <div class="sc" style="margin-top: 34px; font-size: 40px; color: var(--ol-d)">Đếm ngược ngày cưới</div>
@@ -283,7 +290,16 @@ section{position:relative;padding:56px 26px;text-align:center;display:flex;flex-
   var intro = document.getElementById('intro'), tap = document.getElementById('tap');
   try { history.scrollRestoration = 'manual'; } catch (x) {}
   window.scrollTo(0, 0); document.documentElement.style.overflow = 'hidden';
+
+  var bgm = document.getElementById('bgm'), mb = document.getElementById('music');
+  function setMusic(on) {
+    mb.setAttribute('aria-pressed', on ? 'true' : 'false');
+    if (on) { bgm.volume = .55; var pr = bgm.play(); if (pr && pr.catch) pr.catch(function () { mb.setAttribute('aria-pressed', 'false'); }); }
+    else bgm.pause();
+  }
+  mb.addEventListener('click', function () { setMusic(bgm.paused); });
   tap.addEventListener('click', function () {
+    mb.hidden = false; setMusic(true);
     intro.classList.add('opening');
     setTimeout(function () { window.scrollTo(0, 0); document.documentElement.style.overflow = ''; intro.classList.add('done'); }, 900);
     setTimeout(function () { intro.hidden = true; }, 1450);
